@@ -1,0 +1,66 @@
+﻿DragonLocationsName = {
+	type = province
+
+	text = {
+		trigger = { this = province:1591 }
+		localization_key = cannibal_lair_name
+	}
+
+	text = {
+		trigger = { this = province:2321 }
+		localization_key = mountains_of_the_vale_name
+	}
+}
+
+DragonLocationsDesc = {
+	type = province
+
+	text = {
+		trigger = { this = province:1591 }
+		localization_key = cannibal_lair_desc
+	}
+
+	text = {
+		trigger = { this = province:2321 }
+		localization_key = mountains_of_the_vale_desc
+	}
+}
+
+DPGetDragonTypeGuiTooltip = {
+	type = character
+
+	text = {
+		trigger = {
+			NOT = { has_character_flag = owned_dragon }
+		}
+		localization_key = WILD_DRAGON_GUI_TOOLTIP
+	}
+
+	text = {
+		trigger = {
+			has_character_flag = owned_dragon
+			var:current_rider ?= {
+				is_current_dragonrider = yes
+			}
+		}
+		localization_key = DRAGON_RELATION_HAS_RIDER
+	}
+	
+	text = {
+		trigger = {
+			has_character_flag = owned_dragon
+			any_relation = {
+				type = agot_dragon
+				is_alive = yes
+			}
+		}
+		localization_key = DRAGON_RELATION_HAS_BONDED
+	}
+
+	text = {
+		trigger = {
+			has_character_flag = owned_dragon
+		}
+		localization_key = OWNED_DRAGON_GUI_TOOLTIP
+	}
+}

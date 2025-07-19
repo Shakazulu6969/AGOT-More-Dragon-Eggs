@@ -1,0 +1,161 @@
+﻿l_english:
+ more_dragon_eggs_events.0001.t:0 "Dud Eggs Deleted!"
+ more_dragon_eggs_events.0001.desc:0 "This event deletes all dud eggs in your game. You'll it works by hovering over the tooltip. It will tell you which eggs were destroyed. The decision will reappear again when/if there are new dud eggs."
+ more_dragon_eggs_events.0001.a:0 "Destruction!"
+
+ more_dragon_eggs_events.0002.t:0 "Debug notifier"
+ more_dragon_eggs_events.0002.desc:0 "[relocation_destination.GetName] This event deletes all dud eggs in your game. You'll it works by hovering over the tooltip. It will tell you which eggs were destroyed. The decision will reappear again when/if there are new dud eggs."
+ more_dragon_eggs_events.0002.a:0 "Destruction!"
+
+ more_dragon_eggs_events.0003.t:0 "[dragon|E] Selection List"
+ more_dragon_eggs_events.0003.desc:0 ""
+ more_dragon_eggs_events.0003.a:0 "Select this dragon"
+ more_dragon_eggs_events.0003.b:0 "Dismiss"
+
+ more_dragon_eggs_events.0004.t:0 "[dragonpit|E] Selection List"
+ more_dragon_eggs_events.0004.desc:0 "Here be Dragonpits!"
+ more_dragon_eggs_events.0004.a:0 "Move [selected_dragon_loc.GetName] to the selected [dragonpit|E]"
+ more_dragon_eggs_events.0004.b:0 "Move [selected_dragon_loc.GetName] outside"
+ more_dragon_eggs_events.0004.c:0 "Dismiss"
+
+ more_dragon_eggs_events.0005.a:0 ""
+ more_dragon_eggs_events.0005.t:0 ""
+ more_dragon_eggs_events.0005.desc:0 ""
+
+ more_dragon_eggs_events.0006.t:0 ""
+ more_dragon_eggs_events.0006.desc:0 ""
+ more_dragon_eggs_events.0006.a:0 ""
+
+ more_dragon_eggs_events.0007.t:0 ""
+ more_dragon_eggs_events.0007.desc:0 ""
+ more_dragon_eggs_events.0007.a:0 ""
+
+ more_dragon_eggs_events.0008.t:0 "[dragonpit|E] Selection List"
+ more_dragon_eggs_events.0008.desc:0 " "
+ more_dragon_eggs_events.0008.a:0 "Move [selected_dragon_loc.GetName] to the selected [dragonpit|E]"
+ more_dragon_eggs_events.0008.b:0 "Move [selected_dragon_loc.GetName] outside"
+ more_dragon_eggs_events.0008.c:0 "Dismiss"
+
+ more_dragon_eggs_events.0009.t:0 ""
+ more_dragon_eggs_events.0009.desc:0 ""
+ more_dragon_eggs_events.0009.a:0 ""
+
+ more_dragon_eggs_events.0011.t:0 ""
+ more_dragon_eggs_events.0011.desc:0 ""
+
+ more_dragon_eggs_events.0012.a:0 ""
+
+ more_dragon_eggs_events.0014.t:0 "All Living [dragons_plural|E]"
+ more_dragon_eggs_events.0014.desc:0 ""
+ more_dragon_eggs_events.0014.a:0 "View your [dragons_plural|E]"
+ more_dragon_eggs_events.0014.b:0 "View other [dragons_plural|E]"
+ more_dragon_eggs_events.0014.c:0 "Dismiss"
+
+ more_dragon_eggs_events.0015.t:0 "Your Owned Dragonpits"
+ more_dragon_eggs_events.0015.desc:0 ""
+ more_dragon_eggs_events.0015.a:0 "View all [dragons_plural|E] in the selected [dragonpit|E]"
+ more_dragon_eggs_events.0015.b:0 "Move all your [dragons_plural|E] into the selected [dragonpit|E]"
+ more_dragon_eggs_events.0015.c:0 "Move all your [dragons_plural|E] out of the selected [dragonpit|E]"
+ more_dragon_eggs_events.0015.d:0 "View all [dragonpits|E]"
+ more_dragon_eggs_events.0015.e:0 "Dismiss"
+
+ more_dragon_eggs_events.0016.t:0 "Dragons In The [selected_dragonpit_loc.GetName]"
+ more_dragon_eggs_events.0016.desc:0 ""
+ more_dragon_eggs_events.0016.a:0 "View all [dragons_plural|E] in the selected [dragonpit|E]"
+ more_dragon_eggs_events.0016.b:0 "Move the selected dragon outside"
+ more_dragon_eggs_events.0016.c:0 "Dismiss"
+
+ more_dragon_eggs_events.0017.t:0 ""
+ more_dragon_eggs_events.0017.desc:0 ""
+
+ more_dragon_eggs_events.0018.t:0 ""
+ more_dragon_eggs_events.0018.a:0 ""
+
+ more_dragon_eggs_events.0019.t:0 "Dragons In The [selected_dragonpit_loc.GetName]"
+ more_dragon_eggs_events.0019.desc:0 ""
+ more_dragon_eggs_events.0019.a:0 "View Other [dragons_plural|E]"
+ more_dragon_eggs_events.0019.b:0 "View Other [dragonpits|E]"
+ more_dragon_eggs_events.0019.c:0 "Dismiss"
+
+ agot_dragon_maintenance.0807.t:0 "Show Active Dragonpits"
+ agot_dragon_maintenance.0807.a:0 "View all [dragons_plural|E] in the selected [dragonpit|E]"
+ agot_dragon_maintenance.0807.b:0 "Dismiss"
+
+ mde_dragon_eggs_events.0001.t:0 "Dragonlore: The Cannibals Of Skagos"
+ mde_dragon_eggs_events.0001.desc:0 "The fearsome and violent dragon, [cannibal.GetName], was notorious for the abominable acts that earned him his name. Neither the Targaryens or the Order of the Dragonkeepers were able to contain the monstrous beast, much less stop him from feasting on his kin.\n\nIn recorded history, [cannibal.GetName]'s appearance is as mysterious as his disappearance , as very little is known about either. Many say that his birth predated the birth of the Conquerors' dragons.\n\nIt is known, however, that [cannibal.GetName] disappeared some time after The Dance of Dragons. Though some have speculated that he might have flown off into the heart of Skagos, drawn by those of similar nature. You think that this may have been more than speculation, evidenced by the dragonglass scarring the forest floor around you."
+ mde_dragon_eggs_events.0001.a:0 "Unnerving."
+
+ mde_dragon_eggs_events.0002.t:0 "Dragonlore: The Fire Witch Of The Vale"
+ mde_dragon_eggs_events.0002.desc:0 "During the time of the Dance of the Dragons, there were multiple wild dragons. One of these roamed the Vale, a skittish dragon that was particularly fond of lamb, earning him his namesake; [sheepstealer.GetName].\n\nThis was taken advantage of by only the hypothetical non-Targaryen descended dragonrider in Westeros, [nettles.GetName]. She would tame this dragon by luring him in with sheep every day until he trusted her. She also earned the trust of [daemon.GetName], with rumors claiming her to be either his daughter or his lover.\n\nDuring the Dance, [nettles.GetName] and [sheepstealer.GetName] would disappear, never to be seen again.\n\nThat being said, there is a clan in the Mountains of the Vale known as the Burned Men, who possess a coming of age ritual that involves their boys bringing gifts to the Fire Witch, avoiding the wrath of her flames in order to prove their manhood. Many speculate that the Fire Witch is [nettles.GetName]"
+ mde_dragon_eggs_events.0002.a:0 "If the rumors are true..."
+
+
+ mde_dragon_eggs_events.0004.t:0 "Dragonlore: The Cannibal Mound"
+ mde_dragon_eggs_events.0004.desc:0 "You follow the dragonglass scarring throughout the forest, and as you go you begin noticing a direction in which the amount of dragonglass increases. You follow this path, nervously, until it leads to the mouth of an enormous cave.\n\nAfter waiting still for what seems like an eternity, listening for any sound from the cave, you proceed in. The cave is marked across all of its surfaces, in either a deep, red paint or even more dragonglass, and bones litter the floor.\n\nEventually, you reach the center of the cave, where it seems there is a ceremonial pit. At the heart of the ceremonial pit, is a giant mound of skulls of all sorts, rabbits, bears, deer, giants, unicorns, and humans. At the top though is a skull larger than any other, and it shines a wicked green from its eye.\n\nYou treacherously ascend the mound and find a treasure unlike anything else! A dragon egg!"
+ mde_dragon_eggs_events.0004.a:0 "Fear my might!"
+
+ mde_dragon_eggs_events.0005.t:0 "Dragonlore: The Cave Of The Fire Witch"
+ mde_dragon_eggs_events.0005.desc:0 "After discussing with the locals for the better part of many days, you finally convince them to set you on the path of the Burned Men.\n\nYou do well to avoid them as you ascend into the mountains, and it is not hard to find the way of their ritual without their aid, as it is marked frequently by younger, male skeletons. Some of them have varying degrees of burns, down to the bones.\n\nWhether by luck or skill, or both, you find your way to the cave of the Fire Witch, without encountering any Burned Men, inside you see the walls are covered in thousands of markings, almost like a grey rat maester had gone mad without paper. Hidden in the corner, is a dusty, brown dragon egg!"
+ mde_dragon_eggs_events.0005.a:0 "Lucky, indeed."
+
+ mde_dragon_eggs_events.0006.t:0 "Dragonlore: The Isle of Faces"
+ mde_dragon_eggs_events.0006.desc:0 "A horrible whisper emanating from inside my own head stops me dead in my tracks and leaves me feeling nothing but a deep cold and fear.\n\nAgainst my own will, I rapidly face the Isle of Faces, and begin walking towards it, and then swimming.\n\nAs I walk onto the shores of the Isle, exhausted, I notice that the trees are bleeding, dripping blood loudly. A shrouded figure with glowing green eyes peaks its head out from behind the thick cove of weirwood trees, filling me with dread until I pass out.\n\nI awakened back on the shore of the Gods Eye, and disoriented, alarmed by the discovery of a dragon egg in my hands!"
+ mde_dragon_eggs_events.0006.a:0 "Destiny awaits."
+
+ mde_dragon_eggs_events.0007.t:0 "Dragonlore: Gifts from the Past"
+ mde_dragon_eggs_events.0007.desc:0 "I walk high up on the cliffs of Dragonstone, the sound of waves crashing against the rocks below mixing with the slow rumble of the volcano in my ears. As I walk, I find a small opening — the perfect place for my cave exploration to begin.\n\nI climb over a crest of rock, guided by the light cascading over the rocks. Several passages lead off from the main chamber, but the light streaks through a single vein of obsidian, as though guiding me. I follow it, and where it leads me, I cannot believe.\n\nAn egg rests in the center of the room, the light ending just above it! As soon as I touch it however, the passage of time makes itself known, and the light begins to fade. I barely have enough time to grab the egg and rush out of the cave before the light would fade completely, locking me in darkness.\n\nWith heavy breaths of exertion, I make it out of the cave, the egg in my hands!"
+ mde_dragon_eggs_events.0007.a:0 "That was close, but well worth it!"
+ mde_dragon_eggs_events.0007.tt:0 "You gained a Dragon Egg!"
+
+ agot_dragon_maintenance.0802.desc:0 ""
+ agot_dragon_maintenance.0807.desc:0 ""
+ SELECTED_DRAGON_TT:0 "[selected_dragon_loc.GetName]"
+
+ show_eggs_decision_tooltip:0 ""
+ show_dragons_decision_tooltip:0 ""
+ show_dragonpits_decision_tooltip:0 ""
+
+ agot_dragon_maintenance.0800.dragonpits:0 "Show active dragonpits"
+
+ DRAGON_PITTED_WITH_GUI:0 "$DRAGON_RELATION_IS_PITTED$ • [Character.Custom('DPGetDragonTypeGuiTooltip')]"
+ DRAGON_WANDERING_WITH_GUI:0 "$DRAGON_RELATION_IS_WANDERING$ • [Character.Custom('DPGetDragonTypeGuiTooltip')]"
+ DRAGON_CANT_GO_OUTSIDE:0 "Moving this dragon outside would cause you to lose possession of it!"
+ SHOW_DRAGONPITS:1 "#T Show Dragonpits\n#!Shows active [dragonpits|E] and their corresponding menus."
+ SHOW_DRAGONS:1 "#T Show Dragons\n#!Shows living [dragons_plural|E] and their corresponding menus."
+ SHOW_EGGS:1 "#T Show Dragons' Eggs\n#!Shows exising [dragon|E] eggs and their corresponding menus."
+ can_move_a_dragon_tooltip:0 "You are eligible to move a dragon."
+ TRAVEL_POINT_OF_INTEREST_TT_more_dragon_eggs_poi_dragonlore:0 "Site of Draconic Significance"
+
+ agot_dragon_maintenance.0802.t:0 "Show all existing Dragon Eggs"
+ agot_dragon_maintenance.0804.t:0 "Show the Dragon Eggs"
+ agot_dragon_maintenance.0804.a:0 "Show the Dragon Eggs"
+ agot_dragon_maintenance.0804.desc:0 "Displaying all owners of dragon eggs:"
+ agot_dragon_maintenance.0804.desc_no_eggs:0 "There are no dragon eggs."
+ agot_dragon_maintenance.0805.t:0 "Show the Living Dragon Eggs"
+ agot_dragon_maintenance.0805.a:0 "Show the Living Dragon Eggs"
+ agot_dragon_maintenance.0805.desc:0 ""
+ agot_dragon_maintenance.0806.t:0 "Show the Dud Dragon Eggs"
+ agot_dragon_maintenance.0806.a:0 "Show the Dud Dragon Eggs"
+ agot_dragon_maintenance.0806.desc:0 ""
+
+ agot_filler_crownlands.0004.t:0 "A Day on Dragonstone: Gifts from the Past"
+ agot_filler_crownlands.0004.desc:0 "I walk high up on the cliffs of Dragonstone, the sound of waves crashing against the rocks below mixing with the slow rumble of the volcano in my ears. As I walk, I find a small opening — the perfect place for my cave exploration to begin.\n\nI climb over a crest of rock, guided by the light cascading over the rocks. Several passages lead off from the main chamber, but the light streaks through a single vein of obsidian, as though guiding me. I follow it, and where it leads me, I cannot believe.\n\nAn egg rests in the center of the room, the light ending just above it! As soon as I touch it however, the passage of time makes itself known, and the light begins to fade. I barely have enough time to grab the egg and rush out of the cave before the light would fade completely, locking me in darkness.\n\nWith heavy breaths of exertion, I make it out of the cave, the egg in my hands!"
+ agot_filler_crownlands.0004.a:0 "That was close, but well worth it!"
+ agot_filler_crownlands.0004.tt:0 "You gained a Dragon Egg [artifact|E]"
+
+
+ agot_ninepenny.0034.c:0 "A new kingdom will carved out for him."
+ agot_ninepenny.0035.b:0 "$agot_ninepenny.0031.a$ It will be given a more fitting name."
+ agot_ninepenny.0035.b.tt:0 "#italic The Kingdom of Tarth will be rebranded as The Sapphire Islands!"
+
+ a_crown_for_a_king_decision:0 "A Crown for a King"
+ a_crown_for_a_king_decision_desc:0 "Viserys is unworthy of being the King of The Seven Kingdoms, but there is one who is worthy..."
+ a_crown_for_a_king_decision_confirm:0 "Crown him!"
+ a_crown_for_a_king_decision_tooltip:0 "@warning_icon!#X This will remove Viserys as head of the Targaryen Exiles!#"
+
+ agot_targaryen_exile_invasion.9999.t:0 "A Crown for a King"
+ agot_targaryen_exile_invasion.9999.desc:0 "Now that I lead the Exiles and hold the entire Targaryen Dynasty on my shoulders, I must decide what to do with my arrogant and callous brother."
+ agot_targaryen_exile_invasion.9999.b:0 "Show him mercy!"
+ agot_targaryen_exile_invasion.9999.a:0 "Give him the crown he has earned!"
+
+ 

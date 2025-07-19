@@ -1,0 +1,36 @@
+﻿tarth_becomes_the_sapphire_islands_effect = {
+    scope:the_sapphire_islands_char = {
+        get_title = title:k_the_sapphire_islands 
+    }
+	create_title_and_vassal_change = {
+		type = created
+		save_scope_as = title_change
+		add_claim_on_loss = no
+	}
+	title:k_the_sapphire_islands = {
+		if = {
+			limit = { exists = scope:the_sapphire_islands_char }
+			change_title_holder_include_vassals = {
+				holder = scope:the_sapphire_islands_char
+				change = scope:title_change
+			}
+		}
+		copy_title_history = title:k_tarth
+	}
+	title:k_tarth = {
+		every_in_de_jure_hierarchy = {
+			limit = { tier = tier_duchy }
+			set_de_jure_liege_title = title:k_the_sapphire_islands
+        }
+	}
+	resolve_title_and_vassal_change = scope:title_change
+	# Destroy tarth if appropriate.
+	if = {
+		limit = { exists = scope:the_sapphire_islands_char }
+		scope:the_sapphire_islands_char = { destroy_title = title:k_tarth }
+	}
+    agot_set_legitimate_house = {
+        HOUSE = scope:the_sapphire_islands_char.house
+        TITLE = title:k_the_sapphire_islands
+    }
+}

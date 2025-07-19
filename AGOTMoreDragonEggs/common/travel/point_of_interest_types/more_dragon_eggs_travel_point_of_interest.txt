@@ -1,0 +1,31 @@
+﻿#More Dragon Eggs Points of Interests
+more_dragon_eggs_poi_dragonlore = {
+    build_province_list = {
+        province:1591 = {
+            if = {
+                limit = { game_start_date > 8142.1.1 } #Cannibal's last sighting
+                add_to_list = provinces
+            }
+        }
+        province:2321 = {
+            if = {
+                limit = { game_start_date > 8142.1.1 } #Fire Witch in the mountains of the Vale
+                add_to_list = provinces
+            }
+        }
+    }
+
+    on_visit = {
+        switch = {
+            trigger = location
+            province:1591 = {  root = { trigger_event = mde_dragon_eggs_events.0001 } } #Cannibal
+			province:2321 = {  root = { trigger_event = mde_dragon_eggs_events.0002 } } #Sheepstealer
+        }
+        custom_tooltip = agot_poi_dragonlore_tt
+        send_interface_toast = {
+			title = mde_dragonlore_visit
+			left_icon = root
+			custom_tooltip = mde_dragonlore_visit.tt
+		}
+    }
+}

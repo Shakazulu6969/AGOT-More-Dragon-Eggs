@@ -1,0 +1,207 @@
+﻿max_clutch_val = {
+	value = 1
+	if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_more_likely
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_common
+		}
+		add = 2
+	}
+	else = { }
+}
+
+ride_dragon_val = {
+	value = 1095
+	if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_three_months
+		}
+		add = -1003
+	}
+	else_if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_six_months
+		}
+		add = -913
+	}
+	else_if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_nine_months
+		}
+		add = -822
+	}
+    else_if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_one_year
+		}
+		add = -730
+	}
+    else_if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_two_years
+		}
+		add = -365
+	}
+    else_if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_four_years
+		}
+		add = 365
+	}
+    else_if = {
+		limit = {
+			has_game_rule = ride_dragon_decision_cooldown_five_years
+		}
+		add = 730
+	}
+	else = { }
+}
+
+capture_cd_val = {
+    value = 365
+    if = {
+        limit = { has_game_rule = capture_dragon_time_limit_double }
+        add = 365
+    }
+    else_if = {
+        limit = { has_game_rule = capture_dragon_time_limit_182_days }
+        add = -182
+    }
+    else_if = {
+        limit = { has_game_rule = capture_dragon_time_limit_90_days }
+        add = -273
+    }
+    else_if = {
+        limit = { has_game_rule = capture_dragon_time_limit_none}
+        add = -364
+    }
+    else = { }
+}
+
+cannibal_instinct_odds_val = {
+    value = 0
+    if = {
+        limit = { has_game_rule = cannibal_instinct_odds_high }
+        add = 40
+    }
+    else_if = {
+        limit = { has_game_rule = cannibal_instinct_odds_likely }
+        add = 20
+    }
+    else_if = {
+        limit = { has_game_rule = cannibal_instinct_odds_unlikely }
+        add = -20
+    }
+    else_if = {
+        limit = { has_game_rule = cannibal_instinct_odds_rare }
+        add = -40
+    }
+    else = { }
+}
+
+dragon_gene_frequency_val = {
+    value = 0
+    if = {
+        limit = { has_game_rule = dragon_gene_frequency_less_likely }
+        add = -1
+    }
+    else_if = {
+        limit = { has_game_rule = dragon_gene_frequency_more_likely }
+        add = 20
+    }
+    else_if = {
+        limit = { has_game_rule = dragon_gene_frequency_common }
+        add = 40
+    }
+    else = { }
+}
+
+max_clutch_val_fertile = {
+	value = 2
+	if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_more_likely
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_common
+		}
+		add = 2
+	}
+	else = { }
+}
+
+stepstone_invasion_years = {
+	value = 5
+	if = {
+		limit = { 
+			has_game_rule = stepstone_invasion_frequency_never
+		} 
+		add = -5
+	}
+	else_if = {
+		limit = { has_game_rule = stepstone_invasion_frequency_every_year } 
+		add = -1
+	}
+	else_if = {
+		limit = { has_game_rule = stepstone_invasion_frequency_every_10_years } 
+		add = 5
+	}
+	else_if = {
+		limit = { has_game_rule = stepstone_invasion_frequency_every_20_years } 
+		add = 15
+	}
+	else_if = {
+		limit = { has_game_rule = stepstone_invasion_frequency_every_50_years } 
+		add = 45
+	}
+}
+
+more_eggs_val = {
+	value = 0
+	if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_more_likely
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_common
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			has_game_rule = dragon_egg_clutch_frequency_less_likely
+		}
+		add = -1
+	}
+	else = { }
+}
+
+find_dragon_egg_game_rule_val = {
+	value = 0 
+	
+	if = {
+		if = {
+			limit = {
+				has_game_rule = normal_unlikely_spawn
+			}
+			add = 299
+		}
+		else_if = {
+			limit = {
+				has_game_rule = very_likely_spawn
+			}
+			add = 4
+		}
+	}
+}

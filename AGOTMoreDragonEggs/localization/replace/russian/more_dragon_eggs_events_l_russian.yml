@@ -1,0 +1,147 @@
+﻿l_russian:
+ more_dragon_eggs_events.0001.t: "Пустышки уничтожены!"
+ more_dragon_eggs_events.0001.desc: "Это событие удаляет все пустые яйца в вашей игре. Наведите на подсказку, чтобы увидеть результат. Вы узнаете, какие яйца были уничтожены. Решение появится снова, если появятся новые пустышки."
+ more_dragon_eggs_events.0001.a: "Уничтожить!"
+  
+ more_dragon_eggs_events.0002.t: "Отладка"
+ more_dragon_eggs_events.0002.desc: "[relocation_destination.GetName] Это событие удаляет все пустые яйца в вашей игре. Наведите на подсказку, чтобы увидеть результат. Вы узнаете, какие яйца были уничтожены. Решение появится снова, если появятся новые пустышки."
+ more_dragon_eggs_events.0002.a: "Уничтожить!"
+  
+ more_dragon_eggs_events.0003.t: "[dragon|E] Список выбора"
+ more_dragon_eggs_events.0003.desc: "Здесь водятся драконы!"
+ more_dragon_eggs_events.0003.a: "Выбрать этого дракона"
+ more_dragon_eggs_events.0003.b: "Отмена"
+  
+ more_dragon_eggs_events.0004.t: "[dragonpit|E] Список выбора"
+ more_dragon_eggs_events.0004.desc: "Здесь находятся драконьи логова!"
+ more_dragon_eggs_events.0004.a: "Переместить [selected_dragon_loc.GetName] в выбранное [dragonpit|E]"
+ more_dragon_eggs_events.0004.b: "Переместить [selected_dragon_loc.GetName] наружу"
+ more_dragon_eggs_events.0004.c: "Отмена"
+  
+ more_dragon_eggs_events.0005.a: ""
+ more_dragon_eggs_events.0005.t: ""
+ more_dragon_eggs_events.0005.desc: ""
+  
+ more_dragon_eggs_events.0006.t: ""
+ more_dragon_eggs_events.0006.desc: ""
+ more_dragon_eggs_events.0006.a: ""
+  
+ more_dragon_eggs_events.0007.t: ""
+ more_dragon_eggs_events.0007.desc: ""
+ more_dragon_eggs_events.0007.a: ""
+  
+ more_dragon_eggs_events.0008.t: "Список выбора [dragonpit|E]"
+ more_dragon_eggs_events.0008.desc: " "
+ more_dragon_eggs_events.0008.a: "Переместить [selected_dragon_loc.GetName] в выбранное [dragonpit|E]"
+ more_dragon_eggs_events.0008.b: "Переместить [selected_dragon_loc.GetName] наружу"
+ more_dragon_eggs_events.0008.c: "Переместить [selected_dragon_loc.GetName] наружу"
+  
+ more_dragon_eggs_events.0009.t: ""
+ more_dragon_eggs_events.0009.desc: ""
+ more_dragon_eggs_events.0009.a: ""
+  
+ more_dragon_eggs_events.0011.t: ""
+ more_dragon_eggs_events.0011.desc: ""
+  
+ more_dragon_eggs_events.0012.a: ""
+  
+ more_dragon_eggs_events.0014.t: "Все живые [dragons_plural|E]"
+ more_dragon_eggs_events.0014.desc: ""
+ more_dragon_eggs_events.0014.a: "Посмотреть своих [dragons_plural|E]"
+ more_dragon_eggs_events.0014.b: "Посмотреть чужих [dragons_plural|E]"
+ more_dragon_eggs_events.0014.c: "Отменить"
+  
+ more_dragon_eggs_events.0015.t: "Ваши собственные драконьи логова"
+ more_dragon_eggs_events.0015.desc: ""
+ more_dragon_eggs_events.0015.a: "Посмотреть всех [dragons_plural|E] в выбранном [dragonpit|E]"
+ more_dragon_eggs_events.0015.b: "Переместить всех ваших [dragons_plural|E] в выбранное [dragonpit|E]"
+ more_dragon_eggs_events.0015.c: "Переместить всех ваших [dragons_plural|E] из выбранного [dragonpit|E]"
+ more_dragon_eggs_events.0015.d: "Посмотреть все [dragonpits|E]"
+ more_dragon_eggs_events.0015.e: "Отменить"
+  
+ more_dragon_eggs_events.0016.t: "Драконы в [selected_dragonpit_loc.GetName]"
+ more_dragon_eggs_events.0016.desc: ""
+ more_dragon_eggs_events.0016.a: "Посмотреть всех [dragons_plural|E] в выбранном [dragonpit|E]"
+ more_dragon_eggs_events.0016.b: "Переместите выбранного дракона наружу"
+ more_dragon_eggs_events.0016.c: "Отменить"
+  
+ more_dragon_eggs_events.0017.t: ""
+ more_dragon_eggs_events.0017.desc: ""
+  
+ more_dragon_eggs_events.0018.t: ""
+ more_dragon_eggs_events.0018.a: ""
+  
+ more_dragon_eggs_events.0019.t: "Драконы в [selected_dragonpit_loc.GetName]"
+ more_dragon_eggs_events.0019.desc: ""
+ more_dragon_eggs_events.0019.a: "Посмотреть других [dragons_plural|E]"
+ more_dragon_eggs_events.0019.b: "Посмотреть другие [dragonpits|E]"
+ more_dragon_eggs_events.0019.c: "Отменить"
+  
+ agot_dragon_maintenance.0807.t: "Показать активные драконьи логова"
+ agot_dragon_maintenance.0807.a: "Посмотреть всех [dragons_plural|E] в выбранном [dragonpit|E]"
+ agot_dragon_maintenance.0807.b: "Отменить"
+  
+ mde_dragon_eggs_events.0001.t: "Драконьи предания: Каннибалы Скагоса"
+ mde_dragon_eggs_events.0001.desc: "Грозный и жестокий дракон [cannibal.GetName] был печально известен мерзкими деяниями, давшими ему имя. Ни Таргариены, ни Орден Драконьих Стражей не смогли усмирить чудовище, а тем более помешать ему пожирать сородичей.\n\nВ известной истории появление [cannibal.GetName] столь же загадочно, как и исчезновение. Многие считают, что его рождение предшествовало драконам Завоевателей.\n\nДоподлинно известно, что [cannibal.GetName] исчез после Танца Драконов. Ходили слухи, что он улетел вглубь Скагоса, привлеченный родственными душами. Судя по обсидиановым шрамам на лесной почве вокруг, эти слухи могут быть правдой."
+ mde_dragon_eggs_events.0001.a: "Тревожно."
+  
+ mde_dragon_eggs_events.0002.t: "Драконьи предания: Огненная Ведьма Долины"
+ mde_dragon_eggs_events.0002.desc: "Во времена Танца Драконов в Долине обитал дикий дракон [sheepstealer.GetName], получивший имя за любовь к баранине.\n\nЕго смогла приручить [nettles.GetName] - единственный Драконий всадник не-Таргариен в Вестеросе. Она завоевала доверие, ежедневно подкармливая его овцами. Ходили слухи, что она была дочерью или возлюбленной [daemon.GetName].\n\nВо время Танца [nettles.GetName] и [sheepstealer.GetName] исчезли.\n\nВ горах Долины есть клан Опаленных Людей, чей обряд инициации требует принесения даров Огненной Ведьме и прохождения сквозь пламя. Многие считают, что Ведьма - это [nettles.GetName]."
+ mde_dragon_eggs_events.0002.a: "Если слухи правдивы..."
+  
+  
+ mde_dragon_eggs_events.0004.t: "Драконьи предания: Курган Каннибала"
+ mde_dragon_eggs_events.0004.desc: "Следуя по обсидиановым шрамам леса, вы замечаете, что их концентрация нарастает в одном направлении. Вы идете по этому пути, пока он не приводит ко входу в огромную пещеру.\n\nЗатаив дыхание, вы входите внутрь. Стены покрыты красной краской и обсидианом, пол усеян костями.\n\nВ центре пещеры - ритуальная яма с курганом из черепов: кроликов, медведей, оленей, великанов, единорогов и людей. На вершине - огромный череп с зеленым огнем в глазницах.\n\nВзобравшись на курган, вы находите невероятное сокровище - драконье яйцо!"
+ mde_dragon_eggs_events.0004.a: "Да познают мое могущество!"
+  
+ mde_dragon_eggs_events.0005.t: "Драконьи предания: Пещера Огненной Ведьмы"
+ mde_dragon_eggs_events.0005.desc: "После дней расспросов местные указали путь к Опаленным Людям.\n\nПоднимаясь в горы, вы избегаете встреч с ними. Тропа ритуала отмечена скелетами юношей с ожогами на костях.\n\nЧудом найдя пещеру Ведьмы, вы видите стены, испещренные тысячами знаков. В углу - покрытое пылью коричневое драконье яйцо!"
+ mde_dragon_eggs_events.0005.a: "И вправду повезло."
+  
+ mde_dragon_eggs_events.0006.t: "Драконьи предания: Остров Ликов"
+ mde_dragon_eggs_events.0006.desc: "Жуткий шепот в голове парализует меня леденящим страхом.\n\nПротив воли я поворачиваюсь к Острову Ликов и иду к нему, затем плыву.\n\nВыбравшись на берег, я вижу, как деревья кровоточат. Фигура с зелеными глазами выглядывает из рощи чардрев, и я теряю сознание.\n\nОчнувшись на берегу Годзиного Глаза, я обнаруживаю в руках драконье яйцо!"
+ mde_dragon_eggs_events.0006.a: "Судьба ждет."
+  
+ mde_dragon_eggs_events.0007.t: "Драконьи предания: Дары прошлого"
+ mde_dragon_eggs_events.0007.desc: "На скалах Драконьего Камня я нахожу пещеру. Свет струится через жилу обсидиана, указывая путь.\n\nВ конце тоннеля лежит яйцо, освещенное лучом света! Прикоснувшись, я чувствую, как время ускоряется, а свет гаснет. Едва успев схватить яйцо, я выбегаю из пещеры до наступления тьмы.\n\nС тяжелым дыханием я стою снаружи, сжимая драконье яйцо!"
+ mde_dragon_eggs_events.0007.a: "Было близко, но оно того стоило!"
+ mde_dragon_eggs_events.0007.tt: "Вы получили Драконье Яйцо!"
+  
+ agot_dragon_maintenance.0802.desc: "Владельцы драконьих яиц:"
+ agot_dragon_maintenance.0807.desc: ""
+ SELECTED_DRAGON_TT: "[selected_dragon_loc.GetName]"
+  
+ show_eggs_decision_tooltip: ""
+ show_dragons_decision_tooltip: ""
+ show_dragonpits_decision_tooltip: ""
+  
+ agot_dragon_maintenance.0800.dragonpits: "Показать активные драконьи логова"
+  
+ DRAGON_PITTED_WITH_GUI: "$DRAGON_RELATION_IS_PITTED$ • [Character.Custom('DPGetDragonTypeGuiTooltip')]"
+ DRAGON_WANDERING_WITH_GUI: "$DRAGON_RELATION_IS_WANDERING$ • [Character.Custom('DPGetDragonTypeGuiTooltip')]"
+ DRAGON_CANT_GO_OUTSIDE: "Перемещение этого дракона наружу приведёт к потере права владения им!"
+ SHOW_DRAGONPITS: "#T Показать драконьи логова\n#!Отображает активные [dragonpits|E] и связанные с ними меню."
+ SHOW_DRAGONS: "#T Показать драконов\n#!Отображает живых [dragons_plural|E] и связанные с ними меню."
+ SHOW_EGGS: "#T Показать драконьи яйца\n#!Отображает существующие яйца [dragon|E] и связанные с ними меню."
+ can_move_a_dragon_tooltip: "Вы можете переместить дракона."
+ TRAVEL_POINT_OF_INTEREST_TT_more_dragon_eggs_poi_dragonlore: "Место, имеющее драконовское значение"
+  
+ agot_dragon_maintenance.0802.t: "Показать все существующие драконьи яйца"
+ agot_dragon_maintenance.0804.t: "Показать драконьи яйца"
+ agot_dragon_maintenance.0804.a: "Показать драконьи яйца"
+ agot_dragon_maintenance.0804.desc: "Владельцы драконьих яиц:"
+ agot_dragon_maintenance.0804.desc_no_eggs: "Драконьих яиц не обнаружено."
+ agot_dragon_maintenance.0805.t: "Показать живые драконьи яйца"
+ agot_dragon_maintenance.0805.a: "Показать живые драконьи яйца"
+ agot_dragon_maintenance.0805.desc: "Владельцы живых драконьих яиц:"
+ agot_dragon_maintenance.0806.t: "Показать мёртвые драконьи яйца"
+ agot_dragon_maintenance.0806.a: "Показать мёртвые драконьи яйца"
+ agot_dragon_maintenance.0806.desc: "Владельцы мёртвых драконьих яиц:"
+  
+ agot_filler_crownlands.0004.t: "День на Драконьем Камне: Дары Прошлого"
+ agot_filler_crownlands.0004.desc: "Поднимаюсь по скалам Драконьего Камня. Грохот волн смешивается с глухим рокотом вулкана. Заметив узкий проход, начинаю исследовать пещеру.\n\nСвет, пробивающийся через жилу обсидиана, ведет меня вглубь. В центре зала, освещенная лучом, лежит яйцо! Прикоснувшись, чувствую как свет меркнет — время на исходе. Едва успеваю схватить яйцо и выбежать до наступления тьмы.\n\nЗадыхаясь, выбираюсь на поверхность с драгоценной ношей!"
+ agot_filler_crownlands.0004.a: "Было близко, но оно того стоило!"
+ agot_filler_crownlands.0004.tt: "Вы получили Драконье Яйцо [artifact|E]"
+  
+  
+  

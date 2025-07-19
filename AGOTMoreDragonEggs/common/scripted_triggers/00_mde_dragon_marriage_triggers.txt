@@ -1,0 +1,22 @@
+﻿make_dragon_wife_is_shown_trigger = {
+	scope:actor = {
+		is_adult = yes
+	}
+	scope:recipient = {
+		OR = {
+			is_courtier_of = scope:actor
+			is_imprisoned_by = scope:actor
+		}
+		can_become_concubine_of_character_valid_trigger = { CHARACTER = scope:actor }
+	}
+}
+
+can_dragon_marry_trigger = {
+	can_marry_common_trigger = yes
+	#To account for a person marrying their concubines please use can_marry_character_trigger
+	###AGOT Added - RV
+	NAND = {
+		is_ai = yes
+		has_variable = rv_block_ai_marriage
+	}
+}

@@ -1,0 +1,8 @@
+﻿more_eggs = {
+    sort_order = 5
+}
+
+dragon_group = {
+    sort_order = 90
+    gui_tags = { big_button }
+}

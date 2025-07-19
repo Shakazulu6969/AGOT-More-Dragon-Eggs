@@ -1,0 +1,236 @@
+﻿widget = {
+	allow_outside = yes
+	name = "event_window_dragon_selection_tall"
+	size = { 460 320 } # Size of the insert into the event window which takes into account the margin below
+	max_height = 255
+	vbox = {
+	allow_outside = yes
+	margin = { 0 -64 } # Pushes the box around
+	scrollbox = {
+		size = { 460 220 }
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		blockoverride "scrollbox_content"
+		{
+			vbox = {
+				datamodel = "[GetPlayer.MakeScope.GetList('possible_characters_view_only')]"
+				layoutpolicy_horizontal = expanding
+				margin = { -6 -8 }
+				
+				item = {
+					button_standard = {
+						name = "background_button"
+						size = { 436 68 }
+						using = tooltip_ws
+						layoutpolicy_vertical = expanding
+						datacontext = "[Scope.GetCharacter]"
+
+						down = "[GetScriptedGui( 'mre_dragon_selecting' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'selected_dragon', Character.MakeScope ).End )]"
+						onclick = "[GetScriptedGui( 'mre_dragon_selecting' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'selected_dragon', Character.MakeScope ).End )]"
+
+						tooltipwidget = {
+							cooltip_type = {
+								blockoverride "interaction_info" {
+									text = "CHARACTER_TOOLTIP_INSTRUCTION"
+								}
+							}
+						}
+						tooltip_offset = { 0 0 }
+						tooltip_verticalbehavior = slide
+						tooltip_horizontalbehavior = mirror
+
+						portrait_head_small = {
+							scale = 0.75
+							tooltip_visible = no
+						}
+						flowcontainer = {
+							
+							position = { 70 10 }
+							text_single = {
+								name = "character_name"
+								text = "[Character.GetUINameNotMeNoTooltip]"
+								using = Font_Size_Medium
+								align = center
+							}
+							container = {
+								parentanchor = left|bottom
+								icon = {
+									#AGOT Modified
+									#visible = "[Not(Character.IsFemale)]"
+									parentanchor = left|bottom
+
+									visible = "[GetScriptedGui('agot_male_gender_dragon_shown').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+									size = { 20 20 }
+									texture = "gfx/interface/icons/character_status/male_dragon.dds"
+									tooltip = "MALE_DRAGON_TOOLTIP"
+								}
+								icon = {
+									#AGOT Modified
+									#visible = "[Not(Character.IsFemale)]"
+									parentanchor = left|bottom
+
+									visible = "[GetScriptedGui('agot_female_gender_dragon_shown').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+									size = { 20 20 }
+									texture = "gfx/interface/icons/character_status/female_dragon.dds"
+									tooltip = "FEMALE_DRAGON_TOOLTIP"
+								}
+								icon = {
+									#AGOT Modified
+									#visible = "[Not(Character.IsFemale)]"
+									parentanchor = left|bottom
+
+									visible = "[GetScriptedGui('agot_unknown_gender_dragon_shown').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+									size = { 20 20 }
+									texture = "gfx/interface/icons/character_status/unknown_dragon.dds"
+									tooltip = "UNKNOWN_DRAGON_TOOLTIP"
+								}
+							}
+							widget = {
+								
+								widget = {
+									visible = "[GetScriptedGui('dp_has_dragon').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+									position = { 0 3 }
+									parentanchor = left
+									agot_coa_house_microscopic = {
+										datacontext = "[Character.MakeScope.Var('current_rider').GetCharacter.GetHouse]"
+										size = { 5 5 }
+										
+									}
+								}
+								widget = {
+									visible = "[GetScriptedGui('dp_dragon_is_owned').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+									position = { 0 3 }
+									parentanchor = left
+									agot_coa_house_microscopic = {
+										datacontext = "[Character.GetEmployer.GetHouse]"
+										size = { 5 5 }
+										
+									}
+								}
+							}
+						}
+						
+
+						icon = {
+							name = "dragon_icon"
+							position = { 67 35 }
+							size = { 17 17 }
+							texture = "gfx/interface/icons/icon_dragon.dds"
+							visible = "[Character.IsAlive]"
+						} 
+						text_single = {
+							maximumsize = { 350 -1 }
+							name = "dragon_relation_to_host"
+							visible = "[And(GetScriptedGui('mde_relation_check_host').IsShown(GuiScope.SetRoot(Character.MakeScope).End), Not(GetScriptedGui('agot_relation_check_owned').IsShown(GuiScope.SetRoot(Character.MakeScope).End)))]"
+							text = "DRAGON_PITTED_WITH_GUI"
+							tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+							using = tooltip_se
+							position = { 83 31 }
+							fontsize_min = 11
+							align = center
+						}#####
+						text_single = {
+							maximumsize = { 350 -1 }
+							name = "dragon_relation_free"
+							visible = "[And(GetScriptedGui('mde_relation_check_free').IsShown(GuiScope.SetRoot(Character.MakeScope).End), Not(GetScriptedGui('agot_relation_check_owned').IsShown(GuiScope.SetRoot(Character.MakeScope).End)))]"
+							text = "DRAGON_WANDERING_WITH_GUI"
+							tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+							using = tooltip_se
+							position = { 83 31 }
+							fontsize_min = 11
+							align = center
+						}
+						text_single = {
+							maximumsize = { 350 -1 }
+							name = "dragon_relation_wild"
+							visible = "[GetScriptedGui('agot_relation_check_wild').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+							text = "DRAGON_WANDERING_WITH_GUI"
+							tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+							using = tooltip_se
+							position = { 83 31 }
+							fontsize_min = 11
+							align = center
+						}
+						text_single = {
+							maximumsize = { 350 -1 }
+							name = "dragon_relation_to_bonded"
+							visible = "[GetScriptedGui('dp_bonded_pitted').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+							text = "DRAGON_PITTED_WITH_GUI"
+							tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+							using = tooltip_se
+							position = { 83 31 }
+							fontsize_min = 11
+							align = center
+						}
+						text_single = {
+							maximumsize = { 350 -1 }
+							name = "dragon_relation_to_bonded_unpitted"
+							visible = "[GetScriptedGui('dp_bonded_unpitted').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+							text = "DRAGON_WANDERING_WITH_GUI"
+							tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+							using = tooltip_se
+							position = { 83 31 }
+							fontsize_min = 11
+							align = center
+						}
+						
+						expand = {}
+					}
+				}
+				expand = {}
+			}
+		}
+	}
+}
+	#flowcontainer = {
+	#	name = "pin_characters"
+	#	datamodel = "[GetPlayer.MakeScope.GetList('possible_characters_view_only')]"
+	#	visible = "[InDebugMode]"
+	#	parentanchor = top|right
+	#	position = { -455 -15 }
+	#	ignoreinvisible = yes
+	#
+	#	button_round = {
+	#		datacontext = "[Scope.GetCharacter]"
+	#		scale = 0.63
+	#		alwaystransparent = no
+	#		tooltip = "PIN_TT"
+	#		using = tooltip_below
+	#		
+	#		using = Animation_ShowHide_Quick
+	#		onclick = "[Character.ToggleCharacterPinned]"
+	#
+	#		button_replace = {
+	#			texture = "gfx/interface/icons/flat_icons/pin.dds"
+	#			parentanchor = center
+	#			alwaystransparent = yes
+	#		}
+	#	}
+	#
+	#}
+	#flowcontainer = {
+	#	name = "unpin_dragons"
+	#	datamodel = "[GetPlayer.MakeScope.GetList('possible_characters_view_only')]"
+	#	visible = "[InDebugMode]"
+	#	parentanchor = top|right
+	#	position = { -455 15 }
+	#	ignoreinvisible = yes
+	#
+	#	button_round = {
+	#		scale = 0.63
+	#		alwaystransparent = no
+	#		tooltip = "REGENERATE_EVENT_CONTENTS"
+	#		using = tooltip_below
+	#		
+	#		using = Animation_ShowHide_Quick
+	#		onclick = "[EventWindow.ResetContents]"
+	#
+	#		button_replace = {
+	#			texture = "gfx/interface/icons/flat_icons/unpin.dds"
+	#			parentanchor = center
+	#			alwaystransparent = yes
+	#		}
+	#	}
+	#
+	#}
+}

@@ -1,0 +1,395 @@
+﻿namespace = mde_dragon_eggs_events
+
+mde_dragon_eggs_events.0001 = { #Cannibal
+	title = mde_dragon_eggs_events.0001.t
+	desc = mde_dragon_eggs_events.0001.desc
+	type = character_event
+	theme = dragon
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+	artifact = {
+		trigger = { exists = scope:egg }
+		target = scope:egg
+		position = lower_center_portrait
+	}
+
+	override_background = {
+		reference = wilderness_forest_pine
+	}
+
+	trigger = {
+		location = province:1591 #Skagosi Mountains
+		current_travel_plan.travel_plan_owner = root
+		is_ruler = yes
+		is_location_valid_for_travel_event_on_land = yes #Should not be needed...
+		NOT = { exists = var:had_event_dragonlore_0008 }
+		game_start_date > 8142.1.1
+	}
+
+	immediate = {
+		agot_debug_log_effect = { MSG = agot_debug_msg_dragon_hatching_dragonlore_0008 }
+		random_character_artifact = {
+			limit = {
+				has_variable = dragon_egg
+			}
+			save_scope_as = egg
+		}
+		set_variable = had_event_dragonlore_0008
+		character:dragon_cannibal = { save_scope_as = cannibal } #for loc
+	}
+
+	option = {
+		name = mde_dragon_eggs_events.0001.a
+		custom_tooltip = { text = agot_dragon_hatching_dragonlore_increase }
+		if = {
+			limit = {
+				exists = var:dragonlore
+			}
+			change_variable = {
+				name = dragonlore
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = dragonlore
+				value = 1
+			}
+		}
+
+
+
+		if = {
+			limit = {
+				has_game_rule = absolute_spawn
+				NOT = { has_global_variable = cannibal_egg_found }
+				NAND = {
+					has_game_rule = ai_can_not_get_eggs
+					is_ai = yes
+				}
+				NOT = { has_game_rule = spawn_cannibal_egg_disabled }
+			}
+			trigger_event = mde_dragon_eggs_events.0004
+		}
+		#Slim chances to find eggs
+		else_if = {
+			limit = {
+				NOT = { has_global_variable = cannibal_egg_found }
+				NAND = {
+					has_game_rule = ai_can_not_get_eggs
+					is_ai = yes
+				}
+				NOT = { has_game_rule = no_spawns }
+				NOT = { has_game_rule = spawn_cannibal_egg_disabled }
+			}
+			hidden_effect = {
+				random_list = {
+					1 = {
+						modifier = {
+							add = 10
+							has_trait = dragon_dreams
+						}
+						modifier = {
+							add = 12
+							has_game_rule = fairly_likely_spawn
+						}
+						modifier = {
+							add = 225
+							has_game_rule = very_likely_spawn
+						}
+						trigger_event = mde_dragon_eggs_events.0004
+					}
+					299 = { 
+						modifier = {
+							add = 300
+							has_game_rule = very_unlikely_spawn
+						}
+						modifier = {
+							add = 900
+							has_game_rule = extremely_unlikely_spawn
+						}
+					} #Nothing happens
+				}
+			}
+		}
+	}
+}
+
+mde_dragon_eggs_events.0002 = { #Sheepstealer
+	title = mde_dragon_eggs_events.0002.t
+	desc = mde_dragon_eggs_events.0002.desc
+	type = character_event
+	theme = dragon
+	left_portrait = {
+		character = root
+		animation = throne_room_writer
+	}
+	artifact = {
+		trigger = { exists = scope:egg }
+		target = scope:egg
+		position = lower_center_portrait
+	}
+
+	override_background = {
+		reference = wilderness_mountains
+	}
+
+	trigger = {
+		location = province:2321 #Vale Mountains
+		current_travel_plan.travel_plan_owner = root
+		is_ruler = yes
+		is_location_valid_for_travel_event_on_land = yes #Should not be needed...
+		NOT = { exists = var:had_event_dragonlore_0009 }
+		game_start_date > 8142.1.1
+	}
+
+	immediate = {
+		agot_debug_log_effect = { MSG = agot_debug_msg_dragon_hatching_dragonlore_0009 }
+		random_character_artifact = {
+			limit = {
+				has_variable = dragon_egg
+			}
+			save_scope_as = egg
+		}
+		set_variable = had_event_dragonlore_0009
+		character:dragon_sheepstealer = { save_scope_as = sheepstealer } #for loc
+		character:Farseed_1 = { save_scope_as = nettles }
+		character:Targaryen_61 = { save_scope_as = daemon }
+	}
+
+	option = {
+		name = mde_dragon_eggs_events.0002.a
+		custom_tooltip = { text = agot_dragon_hatching_dragonlore_increase }
+		if = {
+			limit = {
+				exists = var:dragonlore
+			}
+			change_variable = {
+				name = dragonlore
+				add = 1
+			}
+		}
+		else = {
+			set_variable = {
+				name = dragonlore
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = absolute_spawn
+				NOT = { has_global_variable = sheepstealer_egg_found }
+				NOT = { has_game_rule = spawn_sheepstealer_egg_disabled }
+				NAND = {
+					has_game_rule = ai_can_not_get_eggs
+					is_ai = yes
+				}
+			}
+			trigger_event = mde_dragon_eggs_events.0005
+		}
+		#Slim chances to find eggs
+		else_if = {
+			limit = {
+				NOT = { has_global_variable = sheepstealer_egg_found }
+				NAND = {
+					has_game_rule = ai_can_not_get_eggs
+					is_ai = yes
+				}
+				NOT = { has_game_rule = no_spawns }
+				NOT = { has_game_rule = spawn_sheepstealer_egg_disabled }
+			}
+			hidden_effect = {
+				random_list = {
+					1 = {
+						modifier = {
+							add = 10
+							has_trait = dragon_dreams
+						}
+						modifier = {
+							add = 12
+							has_game_rule = fairly_likely_spawn
+						}
+						modifier = {
+							add = 225
+							has_game_rule = very_likely_spawn
+						}
+						trigger_event = mde_dragon_eggs_events.0005
+					}
+					299 = {
+						modifier = {
+							add = 300
+							has_game_rule = very_unlikely_spawn
+						}
+						modifier = {
+							add = 900
+							has_game_rule = extremely_unlikely_spawn
+						}
+					} #Nothing happens
+				}
+			}
+		}
+		else = { }
+	}
+}
+
+
+mde_dragon_eggs_events.0004 = { #Cannibal Skagos Egg
+	title = mde_dragon_eggs_events.0004.t
+	desc = mde_dragon_eggs_events.0004.desc
+	type = character_event
+	theme = dragon
+	left_portrait = {
+		character = root
+		scripted_animation = mde_holding_dragon_egg_animation
+	}
+	artifact = {
+		target = scope:found_dragon_egg
+		position = lower_right_portrait
+	}
+	
+	override_background = {
+		reference = agot_icecave
+	}
+
+	immediate = {
+		set_global_variable = { name = cannibal_egg_found }
+		character:dragon_cannibal = { save_scope_as = dragon_parent }
+		create_artifact_dragon_egg_blackgreen_effect = { OWNER = root }
+		scope:newly_created_artifact = {
+			save_scope_as = found_dragon_egg
+		}
+	}
+
+	option = {
+		name = mde_dragon_eggs_events.0004.a
+	}
+}
+
+mde_dragon_eggs_events.0005 = { #Sheepstealer Vale Egg
+	title = mde_dragon_eggs_events.0005.t
+	desc = mde_dragon_eggs_events.0005.desc
+	type = character_event
+	theme = dragon
+	left_portrait = {
+		character = root
+		animation = agot_egg_brown
+	}
+	artifact = {
+		target = scope:found_dragon_egg
+		position = lower_right_portrait
+	}
+	
+	override_background = {
+		reference = fp3_cave
+	}
+
+	immediate = {
+		set_global_variable = { name = sheepstealer_egg_found }
+		character:dragon_sheepstealer = { save_scope_as = dragon_parent }
+		agot_create_random_brown_dragon_egg_artifact = { OWNER = root }
+		scope:newly_created_artifact = {
+			save_scope_as = found_dragon_egg
+		}
+	}
+
+	option = {
+		name = mde_dragon_eggs_events.0005.a
+	}
+}
+
+mde_dragon_eggs_events.0006 = { #Vhagar Harrenhal Egg
+	title = mde_dragon_eggs_events.0006.t
+	desc = mde_dragon_eggs_events.0006.desc
+	type = character_event
+	theme = dragon
+	left_portrait = {
+		character = root
+		scripted_animation = mde_holding_dragon_egg_animation
+	}
+	artifact = {
+		target = scope:found_dragon_egg
+		position = lower_right_portrait
+	}
+	
+	override_background = {
+		reference = agot_weirwood
+	}
+
+	immediate = {
+		set_global_variable = { name = vhagar_egg_found }
+		character:dragon_vhagar = { save_scope_as = dragon_parent }
+		agot_create_random_green_dragon_egg_artifact = { OWNER = root }
+		scope:newly_created_artifact = {
+			save_scope_as = found_dragon_egg
+		}
+	}
+	option = {
+		name = mde_dragon_eggs_events.0006.a
+	}
+}
+
+mde_dragon_eggs_events.0007 = { #Dragonstone Eggs
+	title = mde_dragon_eggs_events.0007.t
+	desc = mde_dragon_eggs_events.0007.desc
+	type = character_event
+	theme = dragon
+	right_portrait = {
+		character = root
+		scripted_animation = mde_holding_dragon_egg_animation
+	}
+	artifact = {
+		target = scope:epic
+		position = lower_left_portrait
+	}
+	override_background = {
+		reference = agot_dragonstone_cave
+	}
+
+	immediate = {
+		custom_tooltip = mde_dragon_eggs_events.0007.tt
+		hidden_effect = {
+			random_list = {
+				1 = {
+					character:dragon_nessarion = { save_scope_as = dragon_parent }
+				}
+				1 = {
+					trigger = { game_start_date >= 7935.1.1 }
+					character:dragon_meraxes = { save_scope_as = dragon_parent }
+				}
+				1 = {
+					trigger = { game_start_date >= 7959.1.1 }
+					character:dragon_vhagar = { save_scope_as = dragon_parent }
+				}
+				1 = {
+					trigger = { game_start_date >= 8017.1.1 }
+					character:dragon_quicksilver = { save_scope_as = dragon_parent }
+				}
+				1 = {
+					trigger = { game_start_date >= 8044.1.1 }
+					character:dragon_dreamfyre = { save_scope_as = dragon_parent }
+				}
+				1 = {
+					trigger = { game_start_date >= 8046.1.1 }
+					character:dragon_meleys = { save_scope_as = dragon_parent }
+				}
+				1 = {
+					trigger = { game_start_date >= 8049.1.1 }
+					character:dragon_silverwing = { save_scope_as = dragon_parent }
+					character:dragon_vermithor = { save_scope_as = dragon_parent_other }
+				}
+				1 = {
+					trigger = { game_start_date >= 8097.1.1 }
+					character:dragon_syrax = { save_scope_as = dragon_parent }
+					character:dragon_caraxes = { save_scope_as = dragon_parent_other }
+				}
+			}
+			agot_create_random_dragon_egg_artifact = { OWNER = root }
+		}
+	}
+
+	option = {
+		name = mde_dragon_eggs_events.0007.a
+	}
+}

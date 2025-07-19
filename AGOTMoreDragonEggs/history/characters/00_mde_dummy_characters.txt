@@ -1,0 +1,90 @@
+﻿Dummy_Targaryen_8 = {
+	name = Viserys
+	dna = Targaryen_8
+	religion = fots_seven
+	culture = high_valyrian
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}
+Dummy_Targaryen_10 = {
+	name = Rhaenys
+	dna = Targaryen_10
+	religion = fots_seven
+	culture = high_valyrian
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}
+Dummy_Targaryen_11 = {
+	name = Aegon
+	dna = Targaryen_11
+	religion = fots_seven
+	culture = high_valyrian
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}
+
+# Canon children
+
+Dummy_Stark_7_1 = {
+	name = Jon
+	dna = Stark_7
+	religion = fots_seven
+	culture = northman
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}
+
+Dummy_Stark_7_2 = {
+	name = Jon
+	dna = Stark_7_2
+	religion = fots_seven
+	culture = northman
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}
+
+Dummy_Stark_7_3 = {
+	name = Jon
+	dna = Stark_7_3
+	religion = fots_seven
+	culture = northman
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}
+
+Dummy_Lowborn_Wildling_1 = {
+	name = Ygritte
+	dna = Lowborn_Wildling_1
+	religion = old_gods_btw_fnf
+	culture = fangman
+	father = Ruin_Empress
+	118.1.1 = {
+		birth = yes
+		add_character_flag = has_scripted_appearance
+	}
+	118.1.2 = { death = yes }
+}

@@ -1,0 +1,692 @@
+﻿can_move_dragonpits_trigger = {
+    save_temporary_scope_as = dragon_owner
+    exists = $DRAGON$
+	is_ai = no
+    OR = {
+        OR = {
+            has_relation_agot_dragon = $DRAGON$
+            AND = {
+                is_house_head = yes
+                $DRAGON$ = {
+                    any_relation = {
+                        type = agot_dragon
+                        is_alive = yes
+                        is_ai = yes
+                        house ?= scope:dragon_owner.house
+                    }
+                }
+            }
+        }
+        $DRAGON$ = {
+            AND = {
+                is_courtier_of = scope:dragon_owner
+                has_character_flag = owned_dragon
+            }
+        }
+        $DRAGON$ = {
+            AND = {
+                has_character_flag = owned_dragon
+                is_courtier_of = $DRAGON$.var:pitted_dragon_location.holder
+                $DRAGON$.var:pitted_dragon_location.holder = {
+                    target_is_liege_or_above = scope:dragon_owner
+                }
+            }
+        }
+    }
+}
+
+dragon_is_not_in_this_pit = {
+    save_temporary_scope_as = pit
+    exists = $DRAGON$
+    NOT = { $DRAGON$.var:pitted_dragon_location.holder = pit }
+}
+
+allow_moving_of_dragon_trigger = {
+	save_temporary_scope_as = naming_parent
+	exists = $DRAGON$
+	is_ai = no
+    OR = {
+        has_relation_agot_dragon = $DRAGON$
+        AND = {
+            is_house_head = yes
+            $DRAGON$ = {
+                any_relation = {
+                    type = agot_dragon
+                    is_alive = yes
+                    is_ai = yes
+                    house ?= scope:naming_parent.house
+                }
+            }
+        }
+        $DRAGON$ = {
+            AND = {
+                scope:naming_parent = {
+                    is_landless_adventurer = yes
+                }
+                var:pitted_dragon_location.county = scope:naming_parent.domicile.domicile_location.county
+                has_character_flag = owned_dragon
+            }
+        }
+        $DRAGON$ = {
+            AND = {
+                has_character_flag = in_dragonpit
+                is_courtier_of = scope:naming_parent
+                var:pitted_dragon_location.holder = scope:naming_parent
+                has_character_flag = owned_dragon
+            }
+        }
+        $DRAGON$ = {
+            has_character_flag = in_dragonpit
+            var:pitted_dragon_location.holder = {
+                target_is_liege_or_above = scope:naming_parent
+            }
+        }
+        $DRAGON$ = {
+            has_character_flag = owned_dragon
+            is_courtier_of = scope:naming_parent
+        }
+    } 
+}
+
+can_move_a_dragon_trigger = {
+	save_temporary_scope_as = naming_parent
+	is_ai = no
+
+    custom_tooltip = {
+        text = can_move_a_dragon_tooltip
+        trigger_if = {
+            any_living_dragon = {
+                OR = {
+                    scope:naming_parent = {
+                        has_relation_agot_dragon = prev
+                    }
+                    AND = {
+                        scope:naming_parent = { is_house_head = yes }
+                        any_relation = {
+                            type = agot_dragon
+                            is_alive = yes
+                            is_ai = yes
+                            house ?= scope:naming_parent.house
+                        }
+                    }
+                    trigger_if = {
+                        limit = {
+                            has_character_flag = in_dragonpit
+                        }
+                        var:pitted_dragon_location.holder = {
+                            target_is_liege_or_above = scope:naming_parent
+                        }
+                    }
+                    AND = {
+                        has_character_flag = owned_dragon
+                        is_courtier_of = scope:naming_parent
+                    }
+                }
+            }
+        }
+    }
+}
+
+mde_live_dragonpits = {
+    any_county = {
+        agot_title_is_an_active_dragonpit = yes
+        count > 0
+    } 
+}
+
+
+dp_moving_of_landless_dragon_trigger = {
+	save_temporary_scope_as = naming_parent
+	exists = $DRAGON$
+    exists = scope:$DRAGON$.var:dragonpen_owner
+    #$DRAGON$ = {
+    #    var:dragonpen_owner = scope:naming_parent
+    #}
+}
+
+dp_can_build_dragonpen = {
+    save_temporary_scope_as = laamp_dude
+    scope:laamp_dude = {
+        OR = {
+            custom_tooltip = {
+                text = has_a_relation_dragon_trigger_tooltip
+                any_relation = { # You have a tamed dragon
+                    type = agot_dragon
+                }
+            }
+            AND = { # You have an egg + You are Ambitious + You have Valyrian Cultural Heritage
+                custom_tooltip = {
+                    text = has_a_dragon_egg_artifact_tooltip
+                    any_character_artifact = {
+                        has_variable = dragon_egg
+                    }
+                }
+                has_trait = ambitious
+                culture = {
+                    has_cultural_pillar = heritage_valyrian
+                }
+            }
+            AND = { # You have an egg + You are Eccentric
+                custom_tooltip = {
+                    text = has_a_dragon_egg_artifact_tooltip
+                    any_character_artifact = {
+                        has_variable = dragon_egg
+                    }
+                }
+                has_trait = eccentric
+            }
+        }
+    }
+}
+
+#dp_land_laamp_dragons = {
+#    save_temporary_scope_as = laamp_dude
+#    scope:laamp_dude = {
+#        any_living_dragon = {
+#			limit = {
+#                #has_character_flag = in_dragonpit
+#				root = this.var:dragonpen_owner
+#			}
+#           this = {
+#                return_to_court = yes
+#                remove_character_flag = in_dragonpen
+#                remove_variable = dragonpen_owner
+#            }
+#			
+#			if = {
+#				limit = {
+#					root.location.county = {
+#						has_any_dragonpits = no
+#						this = { agot_title_is_an_active_dragonpit = no }
+#					}
+#                    NOT = {
+#						root.location ?= { geographical_region = world_westeros_beyond_the_wall }
+#					}
+#				}
+#				agot_send_to_dragonpit_no_event = {
+#					DRAGON = this
+#					DRAGONPIT_COUNTY = root.location.county
+#				}
+#			}
+#		}
+#		any_courtier_or_guest = {
+#			limit = {
+#				has_trait = dragon
+#			}
+#			this = {
+#                return_to_court = yes
+#                remove_character_flag = in_dragonpen
+#                remove_variable = dragonpen_owner
+#            }
+#			
+#			if = {
+#				limit = {
+#					root.location.county = {
+#						has_any_dragonpits = no
+#						this = { agot_title_is_an_active_dragonpit = no }
+#						NOT = { geographical_region = world_westeros_beyond_the_wall }
+#					}
+#				}
+#				agot_send_to_dragonpit_no_event = {
+#					DRAGON = this
+#					DRAGONPIT_COUNTY = root.location.county
+#				}
+#			}
+#		}
+#    }
+#}
+
+is_canon_cradle_egg = {
+    $EGG$ = { save_scope_as = egg }
+    $CHILD$ = { save_scope_as = child }
+    OR = {
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:vermithor #The egg is the right egg
+            }
+            scope:child = {
+                is_character_targaryen_35 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:silverwing
+            }
+            scope:child = {
+                is_character_targaryen_36 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:caraxes
+            }
+            scope:child = {
+                is_character_targaryen_45 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:vermax
+            }
+            scope:child = {
+                is_character_targaryen_75 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:arrax
+            }
+            scope:child = {
+                is_character_targaryen_76 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:tyraxes
+            }
+            scope:child = {
+                is_character_targaryen_77 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:stormcloud
+            }
+            scope:child = {
+                is_character_targaryen_78 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:moondancer
+            }
+            scope:child = {
+                is_character_targaryen_69 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:laena_1
+            }
+            scope:child = {
+                is_character_targaryen_70 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:morning
+            }
+            scope:child = {
+                is_character_targaryen_70 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:morghul
+            }
+            scope:child = {
+                is_character_targaryen_71 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:shrykos
+            }
+            scope:child = {
+                is_character_targaryen_72 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:nightfyre
+            }
+            scope:child = {
+                is_character_targaryen_74 = yes
+            }
+        }
+        AND = {
+            scope:egg = {
+                var:dragon_embryo = flag:drogon
+            }
+            scope:child = {
+                is_character_targaryen_9 = yes
+            }
+        }
+    }
+}
+
+cradler_is_valid = {
+    $EGG$ = { save_scope_as = egg }
+    $CHILD$ = { save_scope_as = child }
+    $ACTOR$ = { save_scope_as = actor }
+    OR = {
+        AND = { # Jaehaerys I / Vermithor
+            scope:egg = {
+                var:dragon_embryo = flag:vermithor #The egg is the right egg
+            }
+            scope:actor = { 
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_35 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_35 = yes
+                    }
+                }
+            }
+            scope:child = { 
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8039 #5 Year grace period to see if the child is actually born. If not then it can be given away.
+        }
+        AND = { # Alysanne / Silverwing
+            scope:egg = {
+                var:dragon_embryo = flag:silverwing
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_36 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_36 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8039
+        }
+        AND = { # Aemon / Caraxes
+            scope:egg = {
+                var:dragon_embryo = flag:caraxes
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_45 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_45 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8060
+        }
+        AND = { # Jacaerys / Vermax
+            scope:egg = {
+                var:dragon_embryo = flag:vermax
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_75 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_75 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8119
+        }
+        AND = { # Lucerys / Arrax
+            scope:egg = {
+                var:dragon_embryo = flag:arrax
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_76 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_76 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8120
+        }
+        AND = { # Joffrey / Tyraxes
+            scope:egg = {
+                var:dragon_embryo = flag:tyraxes
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_77 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_77 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8122
+        }
+        AND = { # Aegon III / Stormcloud
+            scope:egg = {
+                var:dragon_embryo = flag:stormcloud
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_78 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_78 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8125
+        }
+        AND = { # Baela / Moondancer
+            scope:egg = {
+                var:dragon_embryo = flag:moondancer
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_69 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_69 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8121
+        }
+        AND = { # Rhaena / Wrymling
+            scope:egg = {
+                var:dragon_embryo = flag:laena_1
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_70 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_70 = yes
+                    }
+                }
+            }
+            current_year =< 8131 #This and the one below are special cases for Rhaena
+        }
+        AND = { # Rhaena / Morning
+            scope:egg = {
+                var:dragon_embryo = flag:morning
+            }
+            scope:actor = {
+                OR = {
+                    any_dynasty_member = {
+                        is_character_targaryen_70 = yes
+                    }
+                    any_close_or_extended_family_member = {
+                        is_character_targaryen_70 = yes
+                    }
+                }
+            }
+            scope:child = {
+                NOR = {
+                    has_trait = dragonrider
+                    any_relation = {
+                        type = agot_dragon
+                    }
+                }
+            }
+            current_year =< 8141
+        }
+    }
+    AND = { # Jaehaerys (Green) / Shrykos
+        scope:egg = {
+            var:dragon_embryo = flag:shrykos
+        }
+        scope:actor = {
+            OR = {
+                any_dynasty_member = {
+                    is_character_targaryen_72 = yes
+                }
+                any_close_or_extended_family_member = {
+                    is_character_targaryen_72 = yes
+                }
+            }
+        }
+        scope:child = {
+            NOR = {
+                has_trait = dragonrider
+                any_relation = {
+                    type = agot_dragon
+                }
+            }
+        }
+        current_year =< 8127
+    }
+    AND = { # Jaehaera (Green) / Morghul
+        scope:egg = {
+            var:dragon_embryo = flag:morghul
+        }
+        scope:actor = {
+            OR = {
+                any_dynasty_member = {
+                    is_character_targaryen_71 = yes
+                }
+                any_close_or_extended_family_member = {
+                    is_character_targaryen_71 = yes
+                }
+            }
+        }
+        scope:child = {
+            NOR = {
+                has_trait = dragonrider
+                any_relation = {
+                    type = agot_dragon
+                }
+            }
+        }
+        current_year =< 8127
+    }
+    AND = { # Aemond Rivers / Nightfyre
+        scope:egg = {
+            var:dragon_embryo = flag:morghul
+        }
+        scope:actor = {
+            OR = {
+                any_dynasty_member = {
+                    is_character_targaryen_74 = yes
+                }
+                any_close_or_extended_family_member = {
+                    is_character_targaryen_74 = yes
+                }
+            }
+        }
+        scope:child = {
+            NOR = {
+                has_trait = dragonrider
+                any_relation = {
+                    type = agot_dragon
+                }
+            }
+        }
+        current_year =< 8140
+    }
+    AND = { # Daenerys PWOWP / Drogon
+        scope:egg = {
+            var:dragon_embryo = flag:drogon
+        }
+        scope:actor = {
+            OR = {
+                any_dynasty_member = {
+                    is_character_targaryen_9 = yes
+                }
+                any_close_or_extended_family_member = {
+                    is_character_targaryen_9 = yes
+                }
+            }
+        }
+        scope:child = {
+            NOR = {
+                has_trait = dragonrider
+                any_relation = {
+                    type = agot_dragon
+                }
+            }
+        }
+        current_year =< 8140
+    }
+}

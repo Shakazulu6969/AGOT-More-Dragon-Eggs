@@ -1,0 +1,11 @@
+﻿d_dornish_islands = {
+    color = { 220 173 209 }
+    capital = c_wrathrock
+    landless = yes
+}
+
+k_the_sapphire_islands = {
+    color = { 15 82 186 }
+    capital = c_evenfall
+    landless = yes
+}

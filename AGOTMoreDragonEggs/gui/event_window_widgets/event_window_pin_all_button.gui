@@ -1,0 +1,21 @@
+﻿# Event window widget to rename a child (intended to be used at birth)
+# Required controller: name_character
+
+vbox = {
+	name = "event_window_pin_all_button"
+	datacontext = "[GetPlayer.MakeScope]"
+
+
+	event_button_round = {
+		onclick = "[EventWindowWidgetNameCharacter.SetCurrentNameCultural( EventWindowWidgetNameCharacter.GetRandomAvailableAncestorName )]"
+		onclick = "[PdxGuiTriggerAllAnimations('name_refresh')]"
+		tooltip = "event_window_widget_name_child_after_random_ancestor"
+		using = tooltip_se
+
+		button_dynasty_tree = {
+			parentanchor = center
+			alwaystransparent = yes
+		}
+	}
+}
+

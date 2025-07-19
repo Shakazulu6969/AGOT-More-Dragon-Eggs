@@ -1,0 +1,304 @@
+﻿
+##Removes certain artifacts by default and gives the player the ability to recover them. 
+
+use_dragon_pit_mover = {
+	categories = { mde mde_major }
+	default = use_dragon_pit_mover_yes
+	use_dragon_pit_mover_yes = {}
+	use_dragon_pit_mover_no = {}
+}
+
+realm_affairs_extended = {
+	categories = { mde mde_major }
+	default = realm_affairs_extended_decisions_and_buttons
+	realm_affairs_extended_off = {}
+	realm_affairs_extended_buttons = {}
+	realm_affairs_extended_decisions = {}
+	realm_affairs_extended_decisions_and_buttons = {}
+}
+
+can_hatch_multiple_dragons = {
+	categories = { mde hatching }
+	default = can_hatch_multiple_dragons_yes
+	can_hatch_multiple_dragons_no = {}
+	can_hatch_multiple_dragons_yes = {}
+}
+
+
+dragon_hatching_success_chance = {
+	categories = { mde hatching }
+	default = dragon_hatching_normal
+	dragon_hatching_guaranteed = {}
+	dragon_hatching_very_likely = {}
+	dragon_hatching_normal = {}
+	dragon_hatching_not = {}
+}
+
+extant_hatching_ceremonies = {
+	categories = { mde hatching }
+	default = extant_hatching_ceremonies_no
+	extant_hatching_ceremonies_yes = {}
+	extant_hatching_ceremonies_no = {}
+}
+
+dragon_egg_spawn_likelihood = {
+	categories = { mde egg dragonlore }
+	default = normal_unlikely_spawn
+	no_spawns = {}
+	extremely_unlikely_spawn = {}
+	very_unlikely_spawn = {}
+	normal_unlikely_spawn = {}
+	fairly_likely_spawn = {}
+	very_likely_spawn = {}
+	absolute_spawn = {}
+}
+
+spawn_cannibal_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_cannibal_egg_enabled
+	spawn_cannibal_egg_enabled = {}
+	spawn_cannibal_egg_disabled = {}
+}
+
+spawn_sheepstealer_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_sheepstealer_egg_enabled
+	spawn_sheepstealer_egg_enabled = {}
+	spawn_sheepstealer_egg_disabled = {}
+}
+
+spawn_vhagar_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_vhagar_egg_enabled
+	spawn_vhagar_egg_enabled = {}
+	spawn_vhagar_egg_disabled = {}
+}
+
+spawn_hightower_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_hightower_egg_enabled
+	spawn_hightower_egg_enabled = {}
+	spawn_hightower_egg_disabled = {}
+}
+
+spawn_dragonstone_eggs = {
+	categories = { mde egg dragonlore }
+	default = spawn_dragonstone_eggs_enabled
+	spawn_dragonstone_eggs_enabled = {}
+	spawn_dragonstone_eggs_disabled = {}
+}
+
+can_ai_get_eggs = {
+	categories = { mde egg dragonlore ai }
+	default = ai_can_get_eggs
+	ai_can_get_eggs = {}
+	ai_can_not_get_eggs = {}
+}
+
+can_ai_get_dragonstone_eggs = {
+	categories = { mde egg dragonlore ai }
+	default = ai_can_not_get_dragonstone_eggs
+	ai_can_get_dragonstone_eggs = {}
+	ai_can_not_get_dragonstone_eggs = {}
+}
+
+can_cradle_eggs_fail = {
+	categories = { mde egg }
+	default = can_cradle_eggs_fail_yes
+	can_cradle_eggs_fail_yes = {}
+	can_cradle_eggs_fail_no = {}
+}
+
+
+can_ai_cradle_dragon_eggs = {
+	categories = { mde egg ai }
+	default = can_ai_cradle_dragon_eggs_yes
+	can_ai_cradle_dragon_eggs_yes = {}
+	can_ai_cradle_dragon_eggs_no = {}
+}
+
+cradle_egg_hatch_likelihood = {
+	categories = { mde egg }
+	default = cradle_egg_hatch_likelihood_default
+	cradle_egg_hatch_likelihood_rare = {}
+	cradle_egg_hatch_likelihood_less_likely = {}
+	cradle_egg_hatch_likelihood_default = {}
+	cradle_egg_hatch_likelihood_more_likely = {}
+	cradle_egg_hatch_likelihood_common = {}
+}
+
+dragon_egg_clutch_size = {
+	categories = { mde egg dragon }
+	default = dragon_egg_clutch_size_default
+	dragon_egg_clutch_size_default = {}
+	dragon_egg_clutch_size_plus_one = {}
+	dragon_egg_clutch_size_plus_two = {}
+	dragon_egg_clutch_size_plus_three = {}
+}
+
+dragon_egg_clutch_frequency = {
+	categories = { mde egg dragon }
+	default = dragon_egg_clutch_frequency_default
+	dragon_egg_clutch_frequency_less_likely = {}
+	dragon_egg_clutch_frequency_default = {}
+	dragon_egg_clutch_frequency_more_likely = {}
+	dragon_egg_clutch_frequency_common = {}
+}
+
+dragon_egg_clutch_frequency_ai = {
+	categories = { mde egg dragon ai }
+	default = dragon_egg_clutch_frequency_default_ai
+	dragon_egg_clutch_frequency_less_likely_ai = {}
+	dragon_egg_clutch_frequency_default_ai = {}
+	dragon_egg_clutch_frequency_more_likely_ai = {}
+	dragon_egg_clutch_frequency_common_ai = {}
+}
+
+dragon_gene_frequency = {
+	categories = { mde dragon }
+	default = dragon_gene_frequency_default
+	dragon_gene_frequency_less_likely = {}
+	dragon_gene_frequency_default = {}
+	dragon_gene_frequency_more_likely = {}
+	dragon_gene_frequency_common = {}
+}
+
+dragon_gene_frequency_naughty_or_nice = {
+	categories = { mde dragon }
+	default = dragon_gene_frequency_naughty_or_nice_both
+	dragon_gene_frequency_naughty_or_nice_positive = {}
+	dragon_gene_frequency_naughty_or_nice_both = {}
+	dragon_gene_frequency_naughty_or_nice_negative = {}
+}
+
+cannibal_instinct_odds = {
+	categories = { mde dragon }
+	default = cannibal_instinct_odds_default
+	cannibal_instinct_odds_never = {}
+	cannibal_instinct_odds_rare = {}
+	cannibal_instinct_odds_unlikely = {}
+	cannibal_instinct_odds_default = {}
+	cannibal_instinct_odds_likely = {}
+	cannibal_instinct_odds_high = {}
+}
+
+ride_dragon_decision_cooldown = {
+	categories = { mde dragon }
+	default = ride_dragon_decision_cooldown_default
+	ride_dragon_decision_cooldown_three_months = {}
+	ride_dragon_decision_cooldown_six_months = {}
+	ride_dragon_decision_cooldown_nine_months = {}
+	ride_dragon_decision_cooldown_one_year = {}
+	ride_dragon_decision_cooldown_two_years = {}
+	ride_dragon_decision_cooldown_default = {}
+	ride_dragon_decision_cooldown_four_years = {}
+	ride_dragon_decision_cooldown_five_years = {}
+}
+
+capture_dragon_time_limit = {
+	categories = { mde dragon }
+	default = capture_dragon_time_limit_default
+	capture_dragon_time_limit_none = {}
+	capture_dragon_time_limit_90_days = {}
+	capture_dragon_time_limit_182_days = {}
+	capture_dragon_time_limit_default = {}
+	capture_dragon_time_limit_double = {}
+}
+
+summerhall_success_chance = {
+	categories = { mde scenario_modification hatching }
+	default = summerhall_normal
+	summerhall_seven_wild = {}
+	summerhall_guaranteed_all_seven = {}
+	summerhall_guaranteed = {}
+	summerhall_very_likely = {}
+	summerhall_normal = {}
+	summerhall_not = {}
+}
+
+maelys_hatching_success_chance = {
+	categories = { mde scenario_modification hatching }
+	default = maelys_normal
+	maelys_guaranteed = {}
+	maelys_very_likely = {}
+	maelys_normal = {}
+	maelys_not = {}
+}
+
+will_maelys_sacrifice = {
+	categories = { mde scenario_modification hatching }
+	default = maelys_will
+	maelys_will = {}
+	maelys_might = {}
+	maelys_wont = {}
+}
+
+will_maelys_sacrifice = {
+	categories = { mde scenario_modification hatching }
+	default = maelys_will
+	maelys_will = {}
+	maelys_might = {}
+	maelys_wont = {}
+}
+
+will_ebon_prince_form_sapphire_islands = {
+	categories = { mde scenario_modification hatching }
+	default = ebon_will
+	ebon_will = {}
+	ebon_wont = {}
+}
+
+jon_snow_appearance = {
+	categories = { mde scenario_modification hatching }
+	default = js_canon_appearance
+	js_canon_appearance = {}
+	js_purple_eyes = {}
+	js_purple_eyes_silver_hair = {}
+	js_random_appearance = {}
+}
+
+targaryen_exile_success_chance = {
+	categories = { mde scenario_modification hatching }
+	default = targaryen_exile_normal
+	targaryen_exile_not = {}
+	targaryen_exile_normal = {}
+	targaryen_exile_very_likely = {}
+	targaryen_exile_guaranteed = {}
+}
+
+stepstone_invasion_frequency = {
+	categories = { mde mde_misc }
+	default = stepstone_invasion_frequency_every_5_years
+	stepstone_invasion_frequency_never = {}
+	stepstone_invasion_frequency_every_year = {}
+	stepstone_invasion_frequency_every_5_years = {}
+	stepstone_invasion_frequency_every_10_years = {}
+	stepstone_invasion_frequency_every_20_years = {}
+	stepstone_invasion_frequency_every_50_years = {}
+}
+
+can_children_be_landless = {
+	categories = { mde mde_misc }
+	default = can_children_be_landless_default
+	can_children_be_landless_never = {}
+	can_children_be_landless_default = {}
+	can_children_be_landless_not_dragonrider = {}
+	can_children_be_landless_not_targaryen = {}
+}
+
+can_landless_steal = {
+	categories = { mde mde_misc }
+	default = can_landless_steal_vanilla
+	can_landless_steal_vanilla = {}
+	can_landless_steal_dragon_eggs = {}
+	can_landless_steal_valyrian_steel = {}
+	can_landless_steal_eggs_and_steel = {}
+	can_landless_steal_everything = {}
+}
+
+enable_delete_dud_eggs_decision = {
+	categories = { mde mde_misc }
+	default = enable_delete_dud_eggs_decision_yes
+	enable_delete_dud_eggs_decision_yes = {}
+	enable_delete_dud_eggs_decision_no = {}
+}

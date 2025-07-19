@@ -1,0 +1,824 @@
+﻿#OWNER OWNER
+
+create_artifact_dragon_egg_vermithrax_effect = {
+	create_artifact_dragon_egg_frost_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_vermithrax_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:vermithrax
+		}
+	}
+}
+
+create_artifact_dragon_egg_anogaros_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_anogaros_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:anogaros
+		}
+	}
+}
+
+create_artifact_dragon_egg_nessarion_effect = {
+	create_artifact_dragon_egg_frost_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_nessarion_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:nessarion
+		}
+	}
+}
+
+create_artifact_dragon_egg_archonei_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_archonei_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:archonei
+		}
+	}
+}
+
+create_artifact_dragon_egg_balerion_effect = {
+	create_artifact_dragon_egg_black_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_balerion_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:balerion
+		}
+	}
+}
+
+create_artifact_dragon_egg_meraxes_effect = {
+	create_artifact_dragon_egg_grey_2_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_meraxes_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:meraxes
+		}
+	}
+}
+
+create_artifact_dragon_egg_quicksilver_effect = {
+	create_artifact_dragon_egg_silver_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_quicksilver_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:quicksilver
+		}
+	}
+}
+
+create_artifact_dragon_egg_vhagar_effect = {
+	create_artifact_dragon_egg_green_2_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_vhagar_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:vhagar
+		}
+	}
+}
+
+create_artifact_dragon_egg_caraxes_effect = {
+	create_artifact_dragon_egg_darkred_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_caraxes_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:caraxes
+		}
+	}
+}
+
+create_artifact_dragon_egg_meleys_effect = {
+	create_artifact_dragon_egg_red_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_meleys_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:meleys
+		}
+	}
+}
+
+create_artifact_dragon_egg_dreamfyre_effect = {
+	create_artifact_dragon_egg_frost_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_dreamfyre_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:dreamfyre
+		}
+	}
+}
+
+create_artifact_dragon_egg_vermithor_effect = {
+	create_artifact_dragon_egg_bronze_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_vermithor_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:vermithor
+		}
+	}
+}
+
+create_artifact_dragon_egg_silverwing_effect = {
+	create_artifact_dragon_egg_silver_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_silverwing_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:silverwing
+		}
+	}
+}
+
+create_artifact_dragon_egg_seasmoke_effect = {
+	create_artifact_dragon_egg_silver_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_seasmoke_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:seasmoke
+		}
+	}
+}
+
+create_artifact_dragon_egg_syrax_effect = {
+	create_artifact_dragon_egg_yellow_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_syrax_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:syrax
+		}
+	}
+}
+
+create_artifact_dragon_egg_tessarion_effect = {
+	create_artifact_dragon_egg_bluebronze_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_tessarion_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:tessarion
+		}
+	}
+}
+
+create_artifact_dragon_egg_vermax_effect = {
+	create_artifact_dragon_egg_greenorange_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_vermax_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:vermax
+		}
+	}
+}
+
+create_artifact_dragon_egg_arrax_effect = {
+	create_artifact_dragon_egg_brownspots_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_arrax_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:arrax
+		}
+	}
+}
+
+create_artifact_dragon_egg_tyraxes_effect = {
+	create_artifact_dragon_egg_greygreenyellow_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_tyraxes_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:tyraxes
+		}
+	}
+}
+
+create_artifact_dragon_egg_stormcloud_effect = {
+	create_artifact_dragon_egg_grey_2_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_stormcloud_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:stormcloud
+		}
+	}
+}
+
+create_artifact_dragon_egg_moondancer_effect = {
+	create_artifact_dragon_egg_greengrey_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_moondancer_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:moondancer
+		}
+	}
+}
+
+create_artifact_dragon_egg_wyrmling_effect = {
+	create_artifact_dragon_egg_palebluepink_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_wyrmling_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:laena_1
+		}
+	}
+}
+
+create_artifact_dragon_egg_shrykos_effect = {
+	create_artifact_dragon_egg_sunburst_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_shrykos_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:shrykos
+		}
+	}
+}
+
+create_artifact_dragon_egg_drogon_effect = {
+	create_artifact_dragon_egg_blackdarkred_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_drogon_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:drogon
+		}
+	}
+}
+
+
+create_artifact_dragon_egg_viserion_effect = {
+	create_artifact_dragon_egg_tan_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_viserion_desc
+		remove_variable = dragon_embryo
+		set_variable = {
+			name = dragon_embryo
+			value = flag:viserion
+		}
+	}
+}
+
+
+create_artifact_dragon_egg_rhaegal_effect = {
+	create_artifact_dragon_egg_green_2_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_rhaegal_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:rhaegal
+		}
+	}
+}
+
+create_artifact_dragon_egg_sunfyre_effect = {
+	create_artifact_dragon_egg_gold_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_sunfyre_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:sunfyre
+		}
+	}
+}
+
+create_artifact_dragon_egg_morghul_effect = {
+	create_artifact_dragon_egg_rainbowgold_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_morghul_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:morghul
+		}
+	}
+}
+
+create_artifact_dragon_egg_morning_effect = {
+	create_artifact_dragon_egg_pink_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_morning_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:morning
+		}
+	}
+}
+
+create_artifact_dragon_egg_the_last_effect = {
+	create_artifact_dragon_egg_green_1_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_the_last_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:the_last
+		}
+	}
+}
+
+create_artifact_dragon_egg_nightfyre_effect = {
+	create_artifact_dragon_egg_blackgreen_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_nightfyre_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:nightfyre
+		}
+	}
+}
+
+create_artifact_dragon_egg_cannibal_effect = {
+	create_artifact_dragon_egg_black_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_cannibal_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:cannibal
+		}
+	}
+}
+
+create_artifact_dragon_egg_sheepstealer_effect = {
+	create_artifact_dragon_egg_brown_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_sheepstealer_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:sheepstealer
+		}
+	}
+}
+
+create_artifact_dragon_egg_grey_ghost_effect = {
+	create_artifact_dragon_egg_grey_1_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_grey_ghost_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:grey_ghost
+		}
+	}
+}
+
+create_artifact_dragon_egg_serporoth_effect = {
+	create_artifact_dragon_egg_tan_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_serporoth_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:serporoth
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_2_effect = {
+	create_artifact_dragon_egg_purple_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_2_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_2
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_3_effect = {
+	create_artifact_dragon_egg_brown_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_3_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_3
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_4_effect = {
+	create_artifact_dragon_egg_blue_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_4_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_4
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_5_effect = {
+	create_artifact_dragon_egg_yellow_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_5_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_5
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_6_effect = {
+	create_artifact_dragon_egg_darkpurple_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_6_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_6
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_7_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_7_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_7
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_8_effect = {
+	create_artifact_dragon_egg_orange_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_8_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_8
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_9_effect = {
+	create_artifact_dragon_egg_green_1_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_9_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_9
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_10_effect = {
+	create_artifact_dragon_egg_brown_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_10_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_10
+		}
+	}
+}
+
+create_artifact_dragon_egg_maegor_11_effect = {
+	create_artifact_dragon_egg_palepink_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_maegor_11_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:maegor_11
+		}
+	}
+}
+
+create_artifact_dragon_egg_aenys_1_effect = {
+	create_artifact_dragon_egg_tan_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aenys_1_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aenys_1
+		}
+	}
+}
+
+create_artifact_dragon_egg_aenys_2_effect = {
+	create_artifact_dragon_egg_palered_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aenys_2_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aenys_2
+		}
+	}
+}
+
+create_artifact_dragon_egg_aerea_1_effect = {
+	create_artifact_dragon_egg_green_1_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aerea_1_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aerea_1
+		}
+	}
+}
+
+create_artifact_dragon_egg_aerea_2_effect = {
+	create_artifact_dragon_egg_blue_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aerea_2_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aerea_2
+		}
+	}
+}
+
+create_artifact_dragon_egg_aerea_3_effect = {
+	create_artifact_dragon_egg_red_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aerea_3_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aerea_3
+		}
+	}
+}
+
+create_artifact_dragon_egg_daenerys_1_effect = {
+	create_artifact_dragon_egg_darkblue_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_daenerys_1_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:daenerys_1
+		}
+	}
+}
+
+create_artifact_dragon_egg_aemond_1_effect = {
+	create_artifact_dragon_egg_purple_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aemond_1_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aemond_1
+		}
+	}
+}
+
+create_artifact_dragon_egg_aemond_2_effect = {
+	create_artifact_dragon_egg_yellowgreen_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aemond_2_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aemond_2
+		}
+	}
+}
+
+create_artifact_dragon_egg_aemond_3_effect = {
+	create_artifact_dragon_egg_blue_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_aemond_3_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:aemond_3
+		}
+	}
+}
+
+
+create_artifact_dragon_egg_essovius_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_essovius_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:essovius
+		}
+	}
+}
+
+create_artifact_dragon_egg_valryon_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_valryon_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:valryon
+		}
+	}
+}
+
+create_artifact_dragon_egg_ghiscar_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_ghiscar_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:ghiscar
+		}
+	}
+}
+
+create_artifact_dragon_egg_terrax_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_terrax_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:terrax
+		}
+	}
+}
+
+create_artifact_dragon_egg_nagga_effect = {
+	create_artifact_dragon_egg_blue_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_nagga_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:nagga
+		}
+	}
+}
+
+create_artifact_dragon_egg_urrax_effect = {
+	create_artifact_dragon_egg_green_1_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_urrax_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:urrax
+		}
+	}
+}
+
+create_artifact_dragon_egg_dragon_ancestor_1_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_dragon_ancestor_1_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:dragon_ancestor_1
+		}
+	}
+}
+
+create_artifact_dragon_egg_dragon_ancestor_2_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_dragon_ancestor_2_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:dragon_ancestor_2
+		}
+	}
+}
+
+create_artifact_dragon_egg_dragon_ancestor_3_effect = {
+	create_artifact_dragon_egg_white_effect = {
+		OWNER = $OWNER$
+	}
+	scope:newly_created_artifact = {
+		set_artifact_description = dragon_egg_dragon_ancestor_3_desc
+		set_variable = {
+			name = dragon_embryo
+			value = flag:dragon_ancestor_3
+		}
+	}
+}

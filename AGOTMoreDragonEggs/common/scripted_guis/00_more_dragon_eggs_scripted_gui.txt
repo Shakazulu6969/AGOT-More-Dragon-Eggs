@@ -1,0 +1,239 @@
+﻿mre_dragon_selecting = {
+	scope = character
+
+	is_valid = {
+	}
+
+	is_shown = {
+		var:selected_dragon ?= scope:selected_dragon
+	}
+
+	effect = {
+		set_variable = { name = selected_dragon value = scope:selected_dragon }
+	}
+}
+
+mde_dragonpit_selecting = {
+	scope = character
+
+	is_valid = {
+	}
+
+	is_shown = {
+		var:selected_dragonpit ?= scope:selected_dragonpit
+	}
+
+	effect = {
+		set_variable = { name = selected_dragonpit value = scope:selected_dragonpit }
+	}
+}
+
+mde_relation_check_host = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_trait = dragon
+		has_character_flag = in_dragonpit
+		has_variable = pitted_dragon_location
+		NOT = {
+			any_relation = {
+				type = agot_dragon
+				is_alive = yes
+			}
+		}
+	}
+}
+
+
+
+mde_relation_check_free = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_character_flag = owned_dragon
+        NOT = { has_character_flag = in_dragonpit }
+		#any_relation = {
+        #    type = agot_dragon
+        #    is_alive = yes
+        #}
+		NOT = {
+			any_relation = {
+				type = agot_dragon
+				is_alive = yes
+			}
+		}
+		#NOT = { has_variable = pitted_dragon_location }
+	}
+}
+
+dp_bonded_unpitted = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_character_flag = owned_dragon
+        NOT = { has_character_flag = in_dragonpit }
+		OR = {
+			any_relation = {
+				type = agot_dragon
+				is_alive = yes
+			}
+			exists = var:current_rider
+		}
+	}
+}
+
+dp_bonded_pitted = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_character_flag = owned_dragon
+        has_character_flag = in_dragonpit
+		OR = {
+			any_relation = {
+				type = agot_dragon
+				is_alive = yes
+			}
+			exists = var:current_rider
+		}
+	}
+}
+
+dp_rider_pitted = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_character_flag = owned_dragon
+        has_character_flag = in_dragonpit
+		any_relation = {
+            type = agot_dragon
+			is_alive = yes
+        }
+		exists = var:current_rider
+	}
+}
+
+dp_rider_unpitted = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_character_flag = owned_dragon
+        NOT = { has_character_flag = in_dragonpit }
+		any_relation = {
+            type = agot_dragon
+        	is_alive = yes
+        }
+		exists = var:current_rider
+	}
+}
+
+dp_show_dragon_button = {
+	scope = character
+	
+	is_shown = {
+		OR = {
+			has_game_rule = realm_affairs_extended_buttons
+			has_game_rule = realm_affairs_extended_decisions_and_buttons
+		}
+		agot_dragon_population_extinct = no
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_variable = dp_dragon_button_open }
+			}
+			trigger_event = more_dragon_eggs_events.0014
+			set_variable = dp_dragon_button_open
+		}
+	}
+}
+
+dp_show_egg_button = {
+	scope = character
+	
+	is_shown = {
+		OR = {
+			has_game_rule = realm_affairs_extended_buttons
+			has_game_rule = realm_affairs_extended_decisions_and_buttons
+		}
+		any_artifact = {
+			has_variable = dragon_egg
+			count > 0
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_variable = dp_egg_button_open }
+			}
+			trigger_event = agot_dragon_maintenance.0802
+			set_variable = dp_egg_button_open
+		}
+		
+	}
+}
+
+dp_show_dragonpit_button = {
+	scope = character
+	
+	is_shown = {
+		OR = {
+			has_game_rule = realm_affairs_extended_buttons
+			has_game_rule = realm_affairs_extended_decisions_and_buttons
+		}
+		mde_live_dragonpits = yes
+		agot_has_an_active_dragonpit = yes
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_variable = dp_dragonpit_button_open }
+			}
+			trigger_event = more_dragon_eggs_events.0015
+			set_variable = dp_dragonpit_button_open
+		}
+		
+	}
+}
+
+dp_has_dragon = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_trait = dragon
+		has_character_flag = owned_dragon
+		exists = var:current_rider
+	}
+}
+
+dp_dragon_is_owned = {
+	scope = character
+	is_shown = {
+		is_alive = yes
+		has_trait = dragon
+		has_character_flag = owned_dragon
+		NOT = {
+			exists = var:current_rider
+		}
+	}
+}
+
+dp_view_dragons = {
+
+	is_shown = {
+		agot_is_any_dragon_alive = yes
+	}
+	effect = {
+		trigger_event = more_dragon_eggs_events.0014
+	}
+}
+
+dp_view_dragonpits = {
+
+	
+	effect = {
+		trigger_event = more_dragon_eggs_events.0015
+	}
+}

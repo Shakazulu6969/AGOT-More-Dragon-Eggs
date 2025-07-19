@@ -1,0 +1,37 @@
+﻿dp_create_dragonpen_scripted_effect = {
+    $DRAGON_PIT_OWNER$ = {
+		trigger_event = agot_dragonkeepers.0001  # Creates the Head Dragonkeeper Character, Provides a Little Bit of Context to Player
+		#  Adds a variable to the county holding the dragonpit so that the decision cannot be taken again
+		if = {
+			limit = {
+                domicile ?= {
+                    NOT = {
+                        has_variable = has_dragonkeeper_order
+                    }
+                }
+			}
+			random_held_county = {
+				limit = {
+					any_county_province = {
+						has_holding_type = castle_holding
+						has_building_or_higher = generic_dragon_pit_01
+					}
+					NOT = { has_variable = has_dragonkeeper_order }
+				}
+				set_variable = { name = has_dragonkeeper_order }
+			}
+			add_realm_law = dragonpit_close_family_law
+            domicile = {
+                limit = { has_domicile_parameter = camp_unlocks_dragonkeeper }
+                set_variable = { name = has_dragonkeeper_order }
+            }
+		}
+		if = {
+			limit = {
+				has_ep3_dlc_trigger = yes
+			}
+			hidden_effect = { set_amenity_level = { type = agot_dragonpit_amenities value = 3 } }
+			custom_tooltip = agot_dragonpit_amenities_level_set_to_three_tt
+		}
+	}
+}

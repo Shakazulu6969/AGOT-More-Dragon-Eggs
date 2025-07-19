@@ -1,0 +1,49 @@
+types MapModes
+{
+    type dp_buttons = flowcontainer {
+		ignoreinvisible = yes
+
+		button_round  = {
+			visible = "[And(GetScriptedGui('dp_show_dragonpit_button').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(IsGameViewOpen('barbershop')))]"
+			name = "dp_dragonpits_button"
+			datacontext = "[GetScriptedGui( 'dp_show_dragonpit_button' )]"
+			onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			tooltip = "SHOW_DRAGONPITS"
+            button_icon_highlight = {
+				texture = "gfx/interface/icons/building_types/icon_dragonpit.dds"
+				parentanchor = center
+				alwaystransparent = yes
+                position = { 1 1.5 }
+				size = { 23 23 }
+			}
+		}
+        button_round  = {
+			visible = "[And(GetScriptedGui('dp_show_dragon_button').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(IsGameViewOpen('barbershop')))]"
+			name = "dp_dragons_button"
+			datacontext = "[GetScriptedGui( 'dp_show_dragon_button' )]"
+			onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			tooltip = "SHOW_DRAGONS"
+            button_icon_highlight = {
+				texture = "gfx/interface/icons/flat_icons/capture_wild_dragon.dds"
+				parentanchor = center
+				alwaystransparent = yes
+                position = { 1 1.5 }
+				size = { 35 35 }
+			}
+		}
+        button_round  = {
+			visible = "[And(GetScriptedGui('dp_show_egg_button').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(IsGameViewOpen('barbershop')))]"
+			datacontext = "[GetScriptedGui( 'dp_show_egg_button' )]"
+			name = "dp_eggs_button"
+			onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			tooltip = "SHOW_EGGS"
+            button_icon_highlight = {
+				texture = "gfx/interface/icons/artifact/dragon_egg_black.dds"
+				parentanchor = center
+				alwaystransparent = yes
+				size = { 40 40 }
+                alpha = -3500
+			}
+		}
+	}
+}

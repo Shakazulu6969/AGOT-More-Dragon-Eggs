@@ -1,0 +1,1361 @@
+﻿namespace = more_dragon_eggs_events
+
+more_dragon_eggs_events.0001 = { #Delete Dud Eggs
+    type = character_event
+	title = more_dragon_eggs_events.0001.t
+	desc = more_dragon_eggs_events.0001.desc
+	theme = dragon
+
+    immediate = {
+        every_artifact = {
+            limit = {
+                has_variable = dragon_egg
+                has_variable = dud_egg
+            }
+            destroy_artifact = this
+        }
+    }
+	option = {
+		name = more_dragon_eggs_events.0001.a
+	}
+}
+
+more_dragon_eggs_events.0002 = { #Debug Event
+    type = character_event
+	title = more_dragon_eggs_events.0002.t
+	desc = more_dragon_eggs_events.0002.desc
+	theme = dragon
+
+	
+	option = {
+		name = more_dragon_eggs_events.0002.a
+	}
+}
+
+more_dragon_eggs_events.0003 = { #Dragon selection menu
+    type = character_event
+	title = more_dragon_eggs_events.0003.t
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+	desc = more_dragon_eggs_events.0003.desc
+
+	widget = {
+		is_shown = {
+			is_ai = no
+			any_living_dragon = {
+				count >= 0
+			}
+		}
+		gui = "event_window_dragon_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = guy_moving_dragons
+		}
+		every_living_dragon = {
+			save_scope_as = tempdragon
+			limit = {
+				root = {
+					allow_moving_of_dragon_trigger = { DRAGON = prev }
+				}
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_characters_view_only
+					target = prev
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragon }
+					}
+					set_variable = { name = selected_dragon value = prev }
+				}
+			}
+		}
+		
+	}
+
+	after = {
+		clear_variable_list = possible_characters_view_only
+		clear_saved_scope = guy_moving_dragons	
+	}
+
+	option = { #Select Dragon
+	    
+		name = more_dragon_eggs_events.0003.a
+		
+		trigger_event = {
+			id = more_dragon_eggs_events.0004
+			days = 0
+		}
+	}
+
+	option = {#Dismiss
+		name = more_dragon_eggs_events.0003.b
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+more_dragon_eggs_events.0004 = { #Dragonpit selection menu
+    type = character_event
+	title = more_dragon_eggs_events.0004.t
+	desc = more_dragon_eggs_events.0004.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		
+		every_realm_county = {
+			limit = {
+				save_temporary_scope_as = temp_county
+				OR = {
+					root.var:selected_dragon = {
+						NOT = { has_character_flag = in_dragonpit }
+					}
+					root.var:selected_dragon.var:pitted_dragon_location ?= {
+						NOT = { this = scope:temp_county }
+					}
+				}
+				any_county_province = {
+					has_any_dragonpits = yes
+				}
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_dragonpit_view_only
+					target = prev
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragonpit }
+					}
+					set_variable = { name = selected_dragonpit value = prev }
+				}
+			}
+		}
+		if = {
+			limit = {
+				root = {
+					is_landless_adventurer = yes
+				}
+			}
+			root.domicile.domicile_location.county = {
+				save_scope_as = laamp_dragonpen
+			}
+			if = {
+				limit = {
+					domicile ?= { has_domicile_parameter = camp_unlocks_dragonkeeper }
+				}
+				add_to_variable_list = {
+					name = possible_dragonpit_view_only
+					target = scope:laamp_dragonpen
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragonpit }
+					}
+					set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
+				}
+			}
+		}
+		var:selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+	}
+
+	after = {
+		##Clean Up
+		
+		clear_variable_list = possible_dragonpit_view_only
+	}
+
+	option = { # Move to Dragonpit
+		name = more_dragon_eggs_events.0004.a
+		trigger = {
+			exists = var:selected_dragon
+		}
+		show_as_unavailable = {
+			NOT = { exists = scope:selected_dragon }
+		}
+		trigger_event = {
+			id = more_dragon_eggs_events.0005
+			days = 0
+		}
+	}
+
+	option = { #Move Outside
+		trigger = {
+			scope:selected_dragon_loc = {
+				OR = {
+					has_character_flag = in_dragonpit
+					has_character_flag = in_dragonpen
+				}
+			}
+			exists = var:selected_dragon
+			var:selected_dragon = {
+				has_character_flag = owned_dragon
+				any_relation = {
+                    type = agot_dragon
+                    is_alive = yes
+                    is_ai = yes
+                }
+			}
+			#exists = scope:selected_dragon
+		}
+		show_as_unavailable = {
+			NOT = { exists = var:selected_dragon }
+		}
+		name = more_dragon_eggs_events.0004.b
+		trigger_event = {
+			id = more_dragon_eggs_events.0006
+			days = 0
+		}
+	}
+	option = { #Dismiss
+		name = more_dragon_eggs_events.0004.c
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+
+more_dragon_eggs_events.0005 = { #Dragonpit Move Handler
+    type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0005.t
+	desc = more_dragon_eggs_events.0005.desc
+
+
+	immediate = {
+		var:selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+		if = {
+			limit = {
+				var:selected_dragonpit = { exists = yes }
+			}
+			var:selected_dragonpit = {
+				save_scope_as = selected_dragonpit_loc
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				scope:selected_dragonpit_loc = { 
+					exists = yes 
+					agot_title_is_an_active_dragonpit = yes
+				}
+				#any_county_province = {
+				#	this = scope:selected_dragonpit_loc
+				#	has_any_dragonpits = yes
+				#}
+			}
+			agot_send_to_dragonpit_no_event = {
+				DRAGON = scope:selected_dragon_loc
+				DRAGONPIT_COUNTY = scope:selected_dragonpit_loc
+			}
+			if = {
+				limit = {
+					root = {
+						is_landless_adventurer = yes
+					}
+				}
+				scope:selected_dragon_loc = {
+					set_employer = root
+					set_variable = {
+						name = dragonpen_owner
+						value = root
+					}
+				}
+			}
+			scope:selected_dragon_loc = {
+				add_character_flag = player_moved
+			}
+			if = {
+				limit = {
+					scope:selected_dragon_loc = {
+						NOT = { has_character_flag = in_dragonpit }
+					}
+				}
+				scope:selected_dragon_loc = {
+					add_character_flag = in_dragonpit
+					add_character_flag = player_moved
+				}
+			}
+		}
+		
+
+		if = {
+			limit = {
+				scope:selected_dragon_loc = {
+					NOT = { has_character_flag = in_dragonpit }
+				}
+			}
+			scope:selected_dragon_loc = {
+				add_character_flag = in_dragonpit
+				add_character_flag = player_moved
+			}
+		}
+		
+
+
+		##Clean Up
+		clear_variable_list = possible_dragonpit_view_only
+		
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0005.a
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+
+more_dragon_eggs_events.0006 = { #Dragonpit Move Out Handler
+    type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0006.t
+	desc = more_dragon_eggs_events.0006.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		var:selected_dragonpit = {
+			save_scope_as = selected_dragonpit_loc
+		}
+	}
+
+	after = {
+		
+		agot_remove_from_dragonpit_no_event = {
+			DRAGON = scope:selected_dragon_loc
+			DRAGONPIT_COUNTY = scope:selected_dragon_loc.var:pitted_dragon_location
+		}
+
+
+		##Clean Up
+		#clear_variable_list = possible_dragonpit_view_only
+		
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0006.a
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+more_dragon_eggs_events.0007 = { #Dragonpit Cleanup
+    type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0007.t
+	desc = more_dragon_eggs_events.0007.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		remove_variable = not_moved_to_dragon_pit
+		remove_variable = selected_dragon
+		remove_variable = selected_dragonpit
+		clear_saved_scope = selected_dragon_loc
+		clear_saved_scope = selected_dragonpit_loc
+		clear_saved_scope = guy_moving_dragons	
+		clear_saved_scope = button_selected_dragon
+		clear_saved_scope = laamp_dragonpen
+	}
+
+	after = {
+
+
+
+		##Clean Up
+		clear_variable_list = possible_dragonpit_view_only
+		
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0007.a
+	}
+}
+
+more_dragon_eggs_events.0008 = { #Dragonpit selection menu called by button
+    type = character_event
+	title = more_dragon_eggs_events.0008.t
+	desc = more_dragon_eggs_events.0008.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		set_variable = {
+			name = selected_dragon
+			value = scope:button_selected_dragon
+		}
+		scope:button_selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+		
+
+		every_realm_county = {
+			limit = {
+				save_temporary_scope_as = temp_county
+				OR = {
+					root.var:selected_dragon = {
+						NOT = { has_character_flag = in_dragonpit }
+					}
+					root.var:selected_dragon.var:pitted_dragon_location ?= {
+						NOT = { this = scope:temp_county }
+					}
+				}
+				any_county_province = {
+					has_any_dragonpits = yes
+				}
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_dragonpit_view_only
+					target = prev
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragonpit }
+					}
+					set_variable = { name = selected_dragonpit value = prev }
+				}
+			}
+		}
+		if = {
+			limit = {
+				root = {
+					is_landless_adventurer = yes
+				}
+			}
+			root.domicile.domicile_location.county = {
+				save_scope_as = laamp_dragonpen
+			}
+			if = {
+				limit = {
+					domicile ?= { has_domicile_parameter = camp_unlocks_dragonkeeper }
+				}
+				add_to_variable_list = {
+					name = possible_dragonpit_view_only
+					target = scope:laamp_dragonpen
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragonpit }
+					}
+					set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
+				}
+			}
+		}
+		var:selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+		var:selected_dragonpit = {
+			save_scope_as = selected_dragonpit_loc
+		}
+	}
+
+	after = {
+		##Clean Up
+		clear_variable_list = possible_dragonpit_view_only
+	}
+
+	option = { #Move to Dragonpit
+		name = more_dragon_eggs_events.0008.a
+		trigger = {
+			exists = var:selected_dragon
+		}
+		show_as_unavailable = {
+			NOT = { exists = scope:selected_dragon }
+		}
+		if = {
+			limit = {
+				scope:owner = {
+					is_landless_adventurer = no
+				}
+			}
+			trigger_event = {
+				id = more_dragon_eggs_events.0005
+				days = 0
+			}
+		}
+		else = {
+			trigger_event = {
+				id = more_dragon_eggs_events.0011
+				days = 0
+			}
+		}
+	}
+
+	option = { #Move Outside
+		name = more_dragon_eggs_events.0008.b
+		trigger = {
+			var:selected_dragon = {
+				OR = {
+					has_character_flag = in_dragonpit
+					has_character_flag = in_dragonpen
+				}
+				
+			}
+			exists = var:selected_dragon
+		}
+		show_as_unavailable = {
+			NOT = { exists = var:selected_dragon }
+		}
+		scope:selected_dragon_loc.var:pitted_dragon_location = {
+			save_scope_as = dragon_pit_location
+		}
+		
+		trigger_event = {
+			id = more_dragon_eggs_events.0009
+			days = 0
+		}
+	}
+	option = { #Dismiss
+		name = more_dragon_eggs_events.0004.c
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+more_dragon_eggs_events.0009 = { #Remove Dragonpit Button Call
+	type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0009.t
+	desc = more_dragon_eggs_events.0009.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		var:selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+		var:selected_dragonpit = {
+			save_scope_as = selected_dragonpit_loc
+		}
+	}
+
+	after = {
+		
+		agot_remove_from_dragonpit = { DRAGON = scope:selected_dragon_loc DRAGONPIT_HOLDER = root DRAGONPIT_COUNTY = scope:selected_dragon_loc.location.county }
+		##Clean Up
+		clear_variable_list = possible_dragonpit_view_only
+		
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0009.a
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}	
+}
+
+more_dragon_eggs_events.0010 = { #Move penned dragons with the pen
+	hidden = yes
+
+	trigger = {
+		# DLC check.
+		has_ep3_dlc_trigger = yes
+		# Standard checks.
+		is_adult = yes
+		is_available_allow_travelling = yes
+		# Only valid for Laamps
+		is_landless_adventurer = yes
+		domicile ?= { has_domicile_parameter = camp_unlocks_dragonkeeper }
+	}
+
+	immediate = {
+		
+		every_living_dragon = {
+			limit = {
+				has_trait = dragon
+                #has_character_flag = in_dragonpit
+				root = this.var:dragonpen_owner
+			}
+			agot_remove_from_dragonpit_skip_county_effects = { DRAGON = this }
+			
+			this = {
+				remove_character_flag = in_dragonpen
+				set_employer = root
+			}
+			add_to_entourage_court_and_activity_effect = { 
+				CHAR_TO_ADD = this
+				NEW_COURT_OWNER = root 
+			}
+			root = {
+				add_courtier = this
+				current_travel_plan ?= { add_companion = this }
+			}
+		}
+	}
+}
+
+more_dragon_eggs_events.0011 = { #Dragonpen handler
+	type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0011.t
+	desc = more_dragon_eggs_events.0011.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	immediate = {
+		var:selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+		if = {
+			limit = {
+				var:selected_dragonpit = { exists = yes }
+			}
+			var:selected_dragonpit = {
+				save_scope_as = selected_dragonpit_loc
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				scope:selected_dragonpit_loc = { exists = yes }
+				domicile ?= { has_domicile_parameter = camp_unlocks_dragonkeeper }
+			}
+			agot_send_to_dragonpit_no_event = {
+				DRAGON = scope:selected_dragon_loc
+				DRAGONPIT_COUNTY = scope:selected_dragonpit_loc
+			}
+			scope:selected_dragon_loc = {
+				add_character_flag = player_moved
+			}
+			if = {
+				limit = {
+					scope:selected_dragon_loc = {
+						NOT = { has_character_flag = in_dragonpen }
+					}
+				}
+				var:selected_dragon = {
+					add_character_flag = in_dragonpen
+					add_character_flag = player_moved
+					set_employer = root
+					set_variable = {
+						name = dragonpen_owner
+						value = root
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0005.a
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+more_dragon_eggs_events.0012 = { #Move penned dragons back into pen
+	hidden = yes
+
+	trigger = {
+		# DLC check.
+		has_ep3_dlc_trigger = yes
+		# Standard checks.
+		is_adult = yes
+		is_available_allow_travelling = yes
+		# Only valid for Laamps
+		is_landless_adventurer = yes
+		domicile ?= { has_domicile_parameter = camp_unlocks_dragonkeeper }
+	}
+
+	immediate = {
+		
+		every_living_dragon = {
+			limit = {
+				has_trait = dragon
+                #has_character_flag = in_dragonpit
+				root = this.var:dragonpen_owner
+			}
+			
+			if = {
+				limit = {
+					root.location.county = {
+						has_any_dragonpits = no
+						NOT = { this = { agot_title_is_an_active_dragonpit = yes } }
+					}
+					NOT = {
+						root.location ?= { geographical_region = world_westeros_beyond_the_wall }
+					}
+				}
+				agot_send_to_dragonpit_no_event = {
+					DRAGON = this
+					DRAGONPIT_COUNTY = root.location.county
+				}
+				this = {
+					add_character_flag = in_dragonpen
+					set_employer = root
+				}
+			}
+			root = {
+				add_courtier = this
+			}
+			this = {
+				set_variable = {
+					name = dragonpen_owner
+					value = root
+				}
+				set_employer = root
+				return_to_court = yes
+			}
+		}
+		every_courtier_or_guest = {
+			limit = {
+				has_trait = dragon
+			}
+			if = {
+				limit = {
+					root.location.county = {
+						NOT = { this = { agot_title_is_an_active_dragonpit = yes } }
+					}
+					NOT = {
+						root.location ?= { geographical_region = world_westeros_beyond_the_wall }
+					}
+				}
+				agot_send_to_dragonpit_no_event = {
+					DRAGON = this
+					DRAGONPIT_COUNTY = root.location.county
+				}
+				this = {
+					add_character_flag = in_dragonpen
+					set_employer = root
+				}
+			}
+			root = {
+				add_courtier = this
+			}
+			this = {
+				set_variable = {
+					name = dragonpen_owner
+					value = root
+				}
+				set_employer = root
+				return_to_court = yes
+			}
+		}
+	}
+	after = {
+		every_living_dragon = {
+			limit = {
+				has_trait = dragon
+                #has_character_flag = in_dragonpit
+				root = this.var:dragonpen_owner
+			}
+			this = {
+				set_employer = root
+			}
+		}
+	}
+	option = {
+		name = more_dragon_eggs_events.0012.a
+	}
+}
+
+more_dragon_eggs_events.0013 = { #Land laamp dragons
+	hidden = yes
+	immediate = {
+		every_living_dragon = {
+			limit = {
+				has_trait = dragon
+				root = this.var:dragonpen_owner
+			}
+			root = {
+				add_courtier = this
+			}
+			#remove_character_flag = in_dragonpen
+			#remove_variable = dragonpen_owner
+			agot_remove_from_dragonpit_skip_county_effects = { DRAGON = this }
+			root = {
+				add_courtier = this
+			}
+			this = {
+				set_employer = root
+				return_to_court = yes
+			}
+			if = {
+				limit = {
+					scope:new_capital = {
+						#has_any_dragonpits = yes
+						#agot_title_is_an_active_dragonpit = yes
+						geographical_region = world_westeros_beyond_the_wall
+					}
+				}
+				agot_send_to_dragonpit_no_event = {
+					DRAGON = this
+					DRAGONPIT_COUNTY = scope:new_capital
+				}
+			}
+			else = {
+				#agot_send_to_dragonpit_no_event = {
+				#	DRAGON = this
+				#	DRAGONPIT_COUNTY = scope:new_capital
+				#}
+			}
+		}
+	}
+}
+
+more_dragon_eggs_events.0014 = { #DP New View All Dragons
+	type = character_event
+	title = more_dragon_eggs_events.0014.t
+	desc = more_dragon_eggs_events.0014.desc
+
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		is_shown = {
+			is_ai = no
+			any_living_dragon = {
+				count >= 0
+			}
+		}
+		gui = "event_window_dragon_viewer_tall"
+		container = "custom_widgets_container"
+	}
+
+	left_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		every_living_dragon = {
+			limit = {
+				has_trait = dragon
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_characters_view_only
+					target = prev
+				}
+			}
+		}
+	}
+	option = {
+		name = more_dragon_eggs_events.0014.a
+		trigger = {
+			can_move_a_dragon_trigger = yes
+		}
+		clear_variable_list = possible_characters_view_only
+		trigger_event = more_dragon_eggs_events.0003
+		remove_variable = dp_dragon_button_open
+	}
+	option = {
+		name = more_dragon_eggs_events.0014.b
+		clear_variable_list = possible_characters_view_only
+		trigger_event = agot_dragon_maintenance.800
+		remove_variable = dp_dragon_button_open
+	}
+	option = {
+		name = more_dragon_eggs_events.0014.c
+		clear_variable_list = possible_characters_view_only
+		remove_variable = dp_dragon_button_open
+	}
+}
+
+more_dragon_eggs_events.0015 = { # DP Select An Owned Dragonpit
+	type = character_event
+	title = more_dragon_eggs_events.0015.t
+	desc = more_dragon_eggs_events.0015.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	left_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		every_realm_county = {
+			limit = {
+				agot_title_is_an_active_dragonpit = yes
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_dragonpit_view_only
+					target = prev
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragonpit }
+					}
+					set_variable = { name = selected_dragonpit value = prev }
+				}
+			}
+		}
+		if = {
+			limit = {
+				root = {
+					is_landless_adventurer = yes
+				}
+			}
+			root.domicile.domicile_location.county = {
+				save_scope_as = laamp_dragonpen
+			}
+			if = {
+				limit = {
+					domicile ?= { has_domicile_parameter = camp_unlocks_dragonkeeper }
+				}
+				add_to_variable_list = {
+					name = possible_dragonpit_view_only
+					target = scope:laamp_dragonpen
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragonpit }
+					}
+					set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
+				}
+			}
+		}
+		var:selected_dragonpit = {
+			save_scope_as = selected_dragonpit_loc
+		}
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0015.a
+		
+		#clear_variable_list = possible_dragonpit_view_only
+		remove_variable = dp_dragonpit_button_open
+		trigger_event = more_dragon_eggs_events.0016
+
+	}
+	option = {
+		name = more_dragon_eggs_events.0015.b
+		#clear_variable_list = possible_dragonpit_view_only
+		trigger_event = more_dragon_eggs_events.0017
+		remove_variable = dp_dragonpit_button_open
+	}
+	option = {
+		name = more_dragon_eggs_events.0015.c
+		#clear_variable_list = possible_dragonpit_view_only
+		trigger_event = more_dragon_eggs_events.0018
+		remove_variable = dp_dragonpit_button_open
+	}
+	option = {
+		trigger = {
+			any_county = {
+				agot_title_is_an_active_dragonpit = yes
+				count > 0
+			}
+		}
+		name = more_dragon_eggs_events.0015.d
+		#clear_variable_list = possible_dragonpit_view_only
+		trigger_event = agot_dragon_maintenance.0807
+		remove_variable = dp_dragonpit_button_open
+	}
+	option = {
+		name = more_dragon_eggs_events.0015.e
+		clear_variable_list = possible_dragonpit_view_only
+		trigger_event = more_dragon_eggs_events.0007
+		remove_variable = dp_dragonpit_button_open
+	}
+}
+
+more_dragon_eggs_events.0016 = { #Dragon by Dragonpit Menu
+    type = character_event
+	title = more_dragon_eggs_events.0016.t
+	desc = more_dragon_eggs_events.0016.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		is_shown = {
+			is_ai = no
+			any_living_dragon = {
+				count >= 0
+			}
+		}
+		gui = "event_window_dragon_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = guy_moving_dragons
+		}
+		every_living_dragon = {
+			save_scope_as = tempdragon
+			limit = {
+				root = {
+					allow_moving_of_dragon_trigger = { DRAGON = prev }
+				}
+				var:pitted_dragon_location = root.var:selected_dragonpit
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_characters_view_only
+					target = prev
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = selected_dragon }
+					}
+					set_variable = { name = selected_dragon value = prev }
+				}
+			}
+		}
+		
+	}
+
+	after = {
+		clear_variable_list = possible_characters_view_only
+		clear_saved_scope = guy_moving_dragons	
+	}
+
+	option = { #Select Dragon
+	    
+		name = more_dragon_eggs_events.0016.a
+		trigger = {
+			exists = var:selected_dragon
+		}
+		show_as_unavailable = {
+			
+			NOT = { exists = scope:selected_dragon }
+		}
+		trigger_event = {
+			id = more_dragon_eggs_events.0004
+			days = 0
+		}
+	}
+
+	option = { #Move Out
+	    
+		name = more_dragon_eggs_events.0016.b
+		trigger = {
+			exists = var:selected_dragon
+			var:selected_dragon = {
+				has_character_flag = owned_dragon
+				any_relation = {
+                    type = agot_dragon
+                    is_alive = yes
+                    is_ai = yes
+                }
+			}
+			
+		}
+		show_as_unavailable = {
+			custom_tooltip = { text = DRAGON_CANT_GO_OUTSIDE }
+			
+			NOT = { exists = var:selected_dragon }
+		}
+		trigger_event = {
+			id = more_dragon_eggs_events.0006
+			days = 0
+		}
+	}
+
+	option = {#Dismiss
+		name = more_dragon_eggs_events.0016.c
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+more_dragon_eggs_events.0017 = { #Dragonpit Move All In Handler
+    type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0017.t
+	desc = more_dragon_eggs_events.0017.desc
+
+
+	immediate = {
+		var:selected_dragon = {
+			save_scope_as = selected_dragon_loc
+		}
+		if = {
+			limit = {
+				var:selected_dragonpit = { exists = yes }
+			}
+			var:selected_dragonpit = {
+				save_scope_as = selected_dragonpit_loc
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				scope:selected_dragonpit_loc = { exists = yes }
+				any_county_province = {
+					this = scope:selected_dragonpit_loc
+					has_any_dragonpits = yes
+				}
+			}
+			every_living_dragon = {
+				limit = {
+					root = {
+						allow_moving_of_dragon_trigger = { DRAGON = prev }
+					}
+					NOT = { this.var:pitted_dragon_location = scope:selected_dragonpit_loc }
+				}
+				agot_send_to_dragonpit_no_event = {
+					DRAGON = this
+					DRAGONPIT_COUNTY = scope:selected_dragonpit_loc
+				}
+				if = {
+					limit = {
+						root = {
+							is_landless_adventurer = yes
+						}
+					}
+					this = {
+						set_employer = root
+						set_variable = {
+							name = dragonpen_owner
+							value = root
+						}
+					}
+				}
+			}
+			
+			scope:selected_dragon_loc = {
+				add_character_flag = player_moved
+			}
+			if = {
+				limit = {
+					scope:selected_dragon_loc = {
+						NOT = { has_character_flag = in_dragonpit }
+					}
+				}
+				scope:selected_dragon_loc = {
+					add_character_flag = in_dragonpit
+					add_character_flag = player_moved
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				var:selected_dragon = {
+					NOT = { has_character_flag = in_dragonpit }
+				}
+			}
+			var:selected_dragon = {
+				add_character_flag = in_dragonpit
+				add_character_flag = player_moved
+			}
+			
+		}
+
+		
+		
+
+
+		##Clean Up
+		clear_variable_list = possible_dragonpit_view_only
+		
+	}
+
+	option = {
+		name = more_dragon_eggs_events.0005.a
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}
+}
+
+
+more_dragon_eggs_events.0018 = { #Dragonpit Move All Out Handler
+	type = character_event
+	hidden = yes
+	title = more_dragon_eggs_events.0009.t
+	desc = more_dragon_eggs_events.0009.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		gui = "event_window_dragonpit_selection_tall"
+		container = "custom_widgets_container"
+	}
+
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		every_living_dragon = {
+			limit = {
+				root = {
+					allow_moving_of_dragon_trigger = { DRAGON = prev }
+				}
+				has_character_flag = in_dragonpit
+				root.var:selected_dragonpit = this.var:pitted_dragon_location
+			}
+			if = {
+				limit = {
+					root = {
+						is_landless_adventurer = yes
+					}
+				}
+				remove_character_flag = in_dragonpen
+			}
+			agot_remove_from_dragonpit_skip_county_effects = { DRAGON = this }
+		}
+	}
+
+
+	option = {
+		name = more_dragon_eggs_events.0018.a
+		trigger_event = {
+			id = more_dragon_eggs_events.0007
+			days = 0
+		}
+	}	
+}
+
+more_dragon_eggs_events.0019 = { #DP View All In Pit No Move Option
+	type = character_event
+	title = more_dragon_eggs_events.0019.t
+	desc = more_dragon_eggs_events.0019.desc
+	theme = dragon
+	override_background = { reference = agot_dragonpit }
+
+	widget = {
+		is_shown = {
+			is_ai = no
+			any_living_dragon = {
+				count >= 0
+			}
+		}
+		gui = "event_window_dragon_viewer_tall"
+		container = "custom_widgets_container"
+	}
+
+	left_portrait = {
+		character = root
+		animation = chancellor
+	}
+
+	immediate = {
+		every_living_dragon = {
+			limit = {
+				this.var:pitted_dragon_location = root.var:selected_dragonpit
+			}
+			root = {
+				add_to_variable_list = {
+					name = possible_characters_view_only
+					target = prev
+				}
+			}
+		}
+	}
+	option = { #View Other Dragons
+		name = more_dragon_eggs_events.0019.a
+		clear_variable_list = possible_characters_view_only
+		trigger_event = more_dragon_eggs_events.0007
+		trigger_event = agot_dragon_maintenance.800
+	}
+	option = { #View Other Dragonpits
+		name = more_dragon_eggs_events.0019.b
+		clear_variable_list = possible_characters_view_only
+		trigger_event = agot_dragon_maintenance.0807
+	}
+	option = { #Dismiss
+		name = more_dragon_eggs_events.0019.c
+		trigger_event = more_dragon_eggs_events.0007
+		clear_variable_list = possible_characters_view_only
+	}
+}
