@@ -1107,12 +1107,7 @@ agot_dragon_maintenance.0807 = {
 					name = possible_dragonpit_view_only
 					target = prev
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = prev }
-				}
+				set_variable = { name = selected_dragonpit value = prev }
 			}
 			
 		}

@@ -73,12 +73,7 @@ more_dragon_eggs_events.0003 = { #Dragon selection menu
 					name = possible_characters_view_only
 					target = prev
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragon }
-					}
-					set_variable = { name = selected_dragon value = prev }
-				}
+				set_variable = { name = selected_dragon value = prev }
 			}
 		}
 		
@@ -147,12 +142,7 @@ more_dragon_eggs_events.0004 = { #Dragonpit selection menu
 					name = possible_dragonpit_view_only
 					target = prev
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = prev }
-				}
+				set_variable = { name = selected_dragonpit value = prev }
 			}
 		}
 		if = {
@@ -172,12 +162,7 @@ more_dragon_eggs_events.0004 = { #Dragonpit selection menu
 					name = possible_dragonpit_view_only
 					target = scope:laamp_dragonpen
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
-				}
+				set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
 			}
 		}
 		var:selected_dragon = {
@@ -193,12 +178,6 @@ more_dragon_eggs_events.0004 = { #Dragonpit selection menu
 
 	option = { # Move to Dragonpit
 		name = more_dragon_eggs_events.0004.a
-		trigger = {
-			exists = var:selected_dragon
-		}
-		show_as_unavailable = {
-			NOT = { exists = scope:selected_dragon }
-		}
 		trigger_event = {
 			id = more_dragon_eggs_events.0005
 			days = 0
@@ -213,7 +192,6 @@ more_dragon_eggs_events.0004 = { #Dragonpit selection menu
 					has_character_flag = in_dragonpen
 				}
 			}
-			exists = var:selected_dragon
 			var:selected_dragon = {
 				has_character_flag = owned_dragon
 				any_relation = {
@@ -222,10 +200,6 @@ more_dragon_eggs_events.0004 = { #Dragonpit selection menu
                     is_ai = yes
                 }
 			}
-			#exists = scope:selected_dragon
-		}
-		show_as_unavailable = {
-			NOT = { exists = var:selected_dragon }
 		}
 		name = more_dragon_eggs_events.0004.b
 		trigger_event = {
@@ -476,12 +450,7 @@ more_dragon_eggs_events.0008 = { #Dragonpit selection menu called by button
 					name = possible_dragonpit_view_only
 					target = prev
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = prev }
-				}
+				set_variable = { name = selected_dragonpit value = prev }
 			}
 		}
 		if = {
@@ -501,12 +470,7 @@ more_dragon_eggs_events.0008 = { #Dragonpit selection menu called by button
 					name = possible_dragonpit_view_only
 					target = scope:laamp_dragonpen
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
-				}
+				set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
 			}
 		}
 		var:selected_dragon = {
@@ -526,9 +490,6 @@ more_dragon_eggs_events.0008 = { #Dragonpit selection menu called by button
 		name = more_dragon_eggs_events.0008.a
 		trigger = {
 			exists = var:selected_dragon
-		}
-		show_as_unavailable = {
-			NOT = { exists = scope:selected_dragon }
 		}
 		if = {
 			limit = {
@@ -560,9 +521,6 @@ more_dragon_eggs_events.0008 = { #Dragonpit selection menu called by button
 				
 			}
 			exists = var:selected_dragon
-		}
-		show_as_unavailable = {
-			NOT = { exists = var:selected_dragon }
 		}
 		scope:selected_dragon_loc.var:pitted_dragon_location = {
 			save_scope_as = dragon_pit_location
@@ -956,6 +914,7 @@ more_dragon_eggs_events.0015 = { # DP Select An Owned Dragonpit
 	}
 
 	immediate = {
+		
 		every_realm_county = {
 			limit = {
 				agot_title_is_an_active_dragonpit = yes
@@ -965,12 +924,7 @@ more_dragon_eggs_events.0015 = { # DP Select An Owned Dragonpit
 					name = possible_dragonpit_view_only
 					target = prev
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = prev }
-				}
+				set_variable = { name = selected_dragonpit value = prev }
 			}
 		}
 		if = {
@@ -990,12 +944,7 @@ more_dragon_eggs_events.0015 = { # DP Select An Owned Dragonpit
 					name = possible_dragonpit_view_only
 					target = scope:laamp_dragonpen
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragonpit }
-					}
-					set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
-				}
+				set_variable = { name = selected_dragonpit value = scope:laamp_dragonpen }
 			}
 		}
 		var:selected_dragonpit = {
@@ -1085,12 +1034,7 @@ more_dragon_eggs_events.0016 = { #Dragon by Dragonpit Menu
 					name = possible_characters_view_only
 					target = prev
 				}
-				if = {
-					limit = {
-						NOT = { has_variable = selected_dragon }
-					}
-					set_variable = { name = selected_dragon value = prev }
-				}
+				set_variable = { name = selected_dragon value = prev }
 			}
 		}
 		
@@ -1106,10 +1050,6 @@ more_dragon_eggs_events.0016 = { #Dragon by Dragonpit Menu
 		name = more_dragon_eggs_events.0016.a
 		trigger = {
 			exists = var:selected_dragon
-		}
-		show_as_unavailable = {
-			
-			NOT = { exists = scope:selected_dragon }
 		}
 		trigger_event = {
 			id = more_dragon_eggs_events.0004
@@ -1131,11 +1071,6 @@ more_dragon_eggs_events.0016 = { #Dragon by Dragonpit Menu
                 }
 			}
 			
-		}
-		show_as_unavailable = {
-			custom_tooltip = { text = DRAGON_CANT_GO_OUTSIDE }
-			
-			NOT = { exists = var:selected_dragon }
 		}
 		trigger_event = {
 			id = more_dragon_eggs_events.0006
@@ -1357,5 +1292,44 @@ more_dragon_eggs_events.0019 = { #DP View All In Pit No Move Option
 		name = more_dragon_eggs_events.0019.c
 		trigger_event = more_dragon_eggs_events.0007
 		clear_variable_list = possible_characters_view_only
+	}
+}
+
+more_dragon_eggs_events.0020 = { #Debug Event
+    type = character_event
+	title = more_dragon_eggs_events.0020.t
+	desc = more_dragon_eggs_events.0020.desc
+	theme = dragon
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "mde_hatching_egg_selection"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		mde_egg_hatching_list_builder = yes
+		clear_variable_list = mde_egg_hatching_list
+		every_character_artifact = {
+			limit = {
+				has_variable = dragon_egg
+			}
+			root = {
+				add_to_variable_list = {
+					name = mde_egg_hatching_list
+					target = prev
+				}
+			}
+		}
+		random_in_list = {
+			list = mde_egg_hatching_list
+			save_scope_as = gui_egg
+		}
+	}
+	
+	option = {
+		name = more_dragon_eggs_events.0020.a
+		clear_variable_list = mde_egg_hatching_list
 	}
 }

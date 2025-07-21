@@ -7995,7 +7995,7 @@ agot_ninepenny.9000 = {
 			save_scope_as = egg_2
 		}
 		if = {
-			limit = { has_game_rule = can_hatch_multiple_dragons_yes }
+			limit = { has_game_rule = can_hatch_multiple_dragons_yes_all }
 			agot_spawn_owned_hatchling_from_egg_effect = { OWNER = root EGG = scope:egg_2 }
 		}
 		every_courtier = {

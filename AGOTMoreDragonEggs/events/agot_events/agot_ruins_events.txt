@@ -121,6 +121,114 @@ agot_ruins.2000 = { # Get dragon egg from restoring Summerhall
 	}
 }
 
+agot_ruins.2001 = { # Get dragon egg from restoring Spicetown
+	type = character_event
+	title = agot_ruins.2001.t
+	desc = agot_ruins.2001.d
+
+	theme = stewardship_domain_focus
+	override_background = { reference = army_camp }
+
+	left_portrait = {
+		character = root
+		scripted_animation = mde_holding_dragon_egg_animation
+	}
+
+	artifact = {
+		position = lower_right_portrait
+		target = scope:newly_created_artifact
+	}
+
+	immediate = {
+		set_global_variable = { name = moondancer_egg_found }
+		character:dragon_moondancer = { save_scope_as = dragon_parent }
+		character:dragon_vermax = { save_scope_as = dragon_parent_other }
+		create_artifact_dragon_egg_palebluepink_effect = { OWNER = root }
+		scope:newly_created_artifact = { save_scope_as = spicetown_egg }
+	}
+
+	option = {
+		name = agot_ruins.2001.a
+
+		trigger_event = {
+			id = agot_ruins.1000
+			days = { 30 60 }
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				root.liege = {
+					is_ai = no
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = agot_ruins.2001.b
+
+		trigger_event = {
+			id = agot_ruins.1000
+			days = { 30 60 }
+		}
+		root = { save_scope_as = egg_giver }
+		ai_chance = {
+			base = 50
+		}
+		root.liege = {
+			save_scope_as = egg_reciever
+			trigger_event = agot_ruins.2002
+		}
+	}
+}
+
+agot_ruins.2002 = { # Offer egg to liege
+	type = character_event
+	title = agot_ruins.2002.t
+	desc = agot_ruins.2002.d
+
+	theme = stewardship_domain_focus
+	override_background = { reference = army_camp }
+
+	left_portrait = {
+		character = scope:egg_giver
+		scripted_animation = mde_holding_dragon_egg_animation
+	}
+	right_portrait = {
+		character = scope:egg_reciever
+		animation = personality_bold
+	}
+
+	artifact = {
+		position = lower_right_portrait
+		target = scope:spicetown_egg
+	}
+
+	immediate = {
+		set_global_variable = { name = moondancer_egg_found }
+		character:dragon_moondancer = { save_scope_as = dragon_parent }
+		character:dragon_vermax = { save_scope_as = dragon_parent_other }
+		create_artifact_dragon_egg_palebluepink_effect = { OWNER = root }
+		scope:newly_created_artifact = { save_scope_as = spicetown_egg }
+	}
+
+	option = {
+		name = agot_ruins.2002.a
+		scope:spicetown_egg = { set_owner = scope:egg_reciever }
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = agot_ruins.2002.b
+
+		
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
 agot_ruins.3000 = { # Moat Cailin Restoration Begins
 	type = character_event
 	title = agot_ruins.3000.t

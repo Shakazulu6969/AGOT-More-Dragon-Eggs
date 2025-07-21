@@ -142,6 +142,7 @@ dp_show_dragon_button = {
 			limit = {
 				NOT = { has_variable = dp_dragon_button_open }
 			}
+			selected_set_error_fixer = yes
 			trigger_event = more_dragon_eggs_events.0014
 			set_variable = dp_dragon_button_open
 		}
@@ -191,6 +192,7 @@ dp_show_dragonpit_button = {
 			limit = {
 				NOT = { has_variable = dp_dragonpit_button_open }
 			}
+			selected_set_error_fixer = yes
 			trigger_event = more_dragon_eggs_events.0015
 			set_variable = dp_dragonpit_button_open
 		}
@@ -235,5 +237,78 @@ dp_view_dragonpits = {
 	
 	effect = {
 		trigger_event = more_dragon_eggs_events.0015
+	}
+}
+
+mde_egg_select_sgui = {
+	scope = artifact
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_variable_list= {
+						name = mde_egg_hatching_remove_list
+						target = scope:gui_egg
+					}
+				}
+			}
+			add_to_variable_list = {
+				name = mde_egg_hatching_remove_list
+				target = scope:gui_egg
+			}
+			clear_saved_scope = gui_egg
+		}
+		else_if = {
+			limit = {
+				is_target_in_variable_list= {
+					name = mde_egg_hatching_remove_list
+					target = scope:gui_egg
+				}
+			}
+			remove_list_variable = {
+				name = mde_egg_hatching_remove_list
+				target = scope:gui_egg
+			}
+			clear_saved_scope = gui_egg
+		}
+	}
+}
+
+mde_egg_select_sgui_checkbox = {
+	scope = artifact
+
+	is_valid = {
+		is_target_in_variable_list= {
+			name = mde_egg_hatching_remove_list
+			target = scope:gui_egg
+		}
+	}
+
+}
+
+mde_egg_select_use_checkbox_sgui = {
+	scope = character
+
+	is_shown = {
+		is_ai = no
+		NOT = { has_game_rule = can_hatch_multiple_dragons_no }
+	}
+}
+
+mde_egg_has_embryo = {
+	scope = artifact
+
+	is_valid = {
+		scope:egg_artifact = {
+			has_variable = dragon_embryo
+		}
+	}
+	effect = {
+		scope:egg_artifact = {
+			var:dragon_parent = {
+				save_scope_as = tempdragonparent
+			}
+			
+		}
 	}
 }

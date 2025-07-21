@@ -19,9 +19,14 @@ realm_affairs_extended = {
 
 can_hatch_multiple_dragons = {
 	categories = { mde hatching }
-	default = can_hatch_multiple_dragons_yes
+	default = can_hatch_multiple_dragons_yes_25_percent
 	can_hatch_multiple_dragons_no = {}
-	can_hatch_multiple_dragons_yes = {}
+	can_hatch_multiple_dragons_yes_5_percent = {}
+	can_hatch_multiple_dragons_yes_25_percent = {}
+	can_hatch_multiple_dragons_yes_50_percent = {}
+	can_hatch_multiple_dragons_yes_75_percent = {}
+	can_hatch_multiple_dragons_yes_95_percent = {}
+	can_hatch_multiple_dragons_yes_all = {}
 }
 
 
@@ -72,6 +77,41 @@ spawn_vhagar_egg = {
 	default = spawn_vhagar_egg_enabled
 	spawn_vhagar_egg_enabled = {}
 	spawn_vhagar_egg_disabled = {}
+}
+
+spawn_moondancer_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_moondancer_egg_enabled
+	spawn_moondancer_egg_enabled = {}
+	spawn_moondancer_egg_disabled = {}
+}
+
+spawn_nagga_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_nagga_egg_enabled
+	spawn_nagga_egg_enabled = {}
+	spawn_nagga_egg_disabled = {}
+}
+
+spawn_meraxes_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_meraxes_egg_enabled
+	spawn_meraxes_egg_enabled = {}
+	spawn_meraxes_egg_disabled = {}
+}
+
+spawn_pythax_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_pythax_egg_enabled
+	spawn_pythax_egg_enabled = {}
+	spawn_pythax_egg_disabled = {}
+}
+
+spawn_vassarion_egg = {
+	categories = { mde egg dragonlore }
+	default = spawn_vassarion_egg_enabled
+	spawn_vassarion_egg_enabled = {}
+	spawn_vassarion_egg_disabled = {}
 }
 
 spawn_hightower_egg = {

@@ -2,7 +2,7 @@ types MapModes
 {
     type dp_buttons = flowcontainer {
 		ignoreinvisible = yes
-
+		direction = horizontal
 		button_round  = {
 			visible = "[And(GetScriptedGui('dp_show_dragonpit_button').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(IsGameViewOpen('barbershop')))]"
 			name = "dp_dragonpits_button"

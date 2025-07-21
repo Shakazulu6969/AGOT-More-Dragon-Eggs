@@ -205,3 +205,8 @@ find_dragon_egg_game_rule_val = {
 		}
 	}
 }
+
+the_cannibal_age_value = {
+	value = current_year
+	add = -8017
+}

@@ -30,18 +30,32 @@ agot_dragon_hatching.0001 = { #knowledge activity hatch start
 	desc = agot_dragon_hatching.0001.desc
 	theme = dragon
 
-
 	widget = {
 		is_shown = {
 			is_ai = no
 		}
-		gui = "agot_artifact_selection"
+		gui = "mde_hatching_egg_selection"
 		container = "custom_widgets_container"
+
 	}
 
 	left_portrait = {
 		character = root
 		animation = throne_room_writer
+	}
+
+	immediate = {
+		every_character_artifact = {
+			limit = {
+				has_variable = dragon_egg
+			}
+			root = {
+				add_to_variable_list = {
+					name = mde_egg_hatching_remove_list
+					target = prev
+				}
+			}
+		}
 	}
 
 	option = {
@@ -56,10 +70,19 @@ agot_dragon_hatching.0001 = { #knowledge activity hatch start
 		var:selected_artifact = {
 			set_variable = agot_artifact_cannot_gift
 		}
+		every_in_list = {
+			variable = mde_egg_hatching_remove_list
+			set_variable = extra_egg_to_hatch
+		}
 	}
 
 	after = {
+		every_in_list = {
+			list = mde_egg_hatching_remove_list
+			set_variable = extra_egg_to_hatch
+		}
 		clear_variable_list = possible_artifacts
+		clear_variable_list = mde_egg_hatching_remove_list
 		remove_variable = selected_artifact
 	}
 }
@@ -75,13 +98,29 @@ agot_dragon_hatching.0002 = { #esoteric activity hatch start
 		is_shown = {
 			is_ai = no
 		}
-		gui = "agot_artifact_selection"
+		gui = "mde_hatching_egg_selection"
 		container = "custom_widgets_container"
+
 	}
 
 	left_portrait = {
 		character = root
 		animation = throne_room_writer
+	}
+
+	immediate = {
+		every_character_artifact = {
+			limit = {
+				has_variable = dragon_egg
+			}
+			root = {
+				add_to_variable_list = {
+					name = mde_egg_hatching_remove_list
+					target = prev
+				}
+			}
+		}
+		
 	}
 
 	option = {
@@ -96,10 +135,19 @@ agot_dragon_hatching.0002 = { #esoteric activity hatch start
 		var:selected_artifact = {
 			set_variable = agot_artifact_cannot_gift
 		}
+		every_in_list = {
+			variable = mde_egg_hatching_remove_list
+			set_variable = extra_egg_to_hatch
+		}
 	}
 
 	after = {
+		every_in_list = {
+			list = mde_egg_hatching_remove_list
+			set_variable = extra_egg_to_hatch
+		}
 		clear_variable_list = possible_artifacts
+		clear_variable_list = mde_egg_hatching_remove_list
 		remove_variable = selected_artifact
 	}
 }
@@ -4090,6 +4138,20 @@ agot_dragon_hatching.0101 = { # Host
 		display_hatching_bad_outcome_results = yes
 		action_hatching_bad_outcome_results = yes
 		destroy_artifact = scope:egg
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = can_hatch_multiple_dragons_no
+				}
+			}
+			every_character_artifact = {
+				limit = {
+					has_variable = dragon_egg
+					has_variable = extra_egg_to_hatch
+				}
+				destroy_artifact = this
+			}
+		}
 		stress_impact = {
 			base = medium_stress_impact_gain
 			arrogant = medium_stress_impact_gain
@@ -4157,6 +4219,20 @@ agot_dragon_hatching.0201 = { # Host
 		display_hatching_bad_outcome_results = yes
 		action_hatching_bad_outcome_results = yes
 		destroy_artifact = scope:egg
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = can_hatch_multiple_dragons_no
+				}
+			}
+			every_character_artifact = {
+				limit = {
+					has_variable = dragon_egg
+					has_variable = extra_egg_to_hatch
+				}
+				destroy_artifact = this
+			}
+		}
 		hidden_effect = {
 			scope:activity = { skip_activity_phase = yes }
 		}
@@ -4251,6 +4327,20 @@ agot_dragon_hatching.0303 = { # Host - egg is destroyed
 			diligent = minor_stress_impact_gain
 		}
 		destroy_artifact = scope:egg
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = can_hatch_multiple_dragons_no
+				}
+			}
+			every_character_artifact = {
+				limit = {
+					has_variable = dragon_egg
+					has_variable = extra_egg_to_hatch
+				}
+				destroy_artifact = this
+			}
+		}
 		hidden_effect = {
 			scope:activity = { skip_activity_phase = yes }
 		}
@@ -4387,20 +4477,97 @@ agot_dragon_hatching.0401 = { # Host
 				scope:dragon = { add_trait = dragon_destined }
 			}
 			if = {
-				limit = { has_game_rule = can_hatch_multiple_dragons_yes }
+				limit = { has_game_rule = can_hatch_multiple_dragons_yes_all }
 				every_character_artifact = { # Destroy other eggs too
 					limit = {
 						has_variable = dragon_egg
-						#NOT = { has_variable = selected_egg }
-						NOT = { this = scope:egg }
 					}
 					save_scope_as = this_egg
-					agot_spawn_owned_hatchling_from_egg_effect = { OWNER = root EGG = scope:this_egg }
+					agot_spawn_owned_hatchling_from_egg_effect = { OWNER = scope:host EGG = scope:this_egg }
 				}
+			}
+			else = {
+				every_character_artifact = {
+					limit = {
+						has_variable = dragon_egg
+						has_variable = extra_egg_to_hatch
+					}
+					save_scope_as = this_egg
+					random_list = {
+						5 = {
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_25_percent
+								add = 20
+							}
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_50_percent
+								add = 45
+							}
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_75_percent
+								add = 70
+							}
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_95_percent
+								add = 90
+							}
+							modifier = {
+								has_variable = dragon_embryo
+								OR = {
+									has_game_rule = agot_canon_dragons_enabled_traits
+									has_game_rule = agot_canon_dragons_enabled
+								}
+								factor = 1000
+							}
+							agot_spawn_owned_hatchling_from_egg_effect = { OWNER = scope:host EGG = scope:this_egg }
+
+						}
+						95 = {
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_25_percent
+								add = -20
+							}
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_50_percent
+								add = -45
+							}
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_75_percent
+								add = -70
+							}
+							modifier = {
+								has_game_rule = can_hatch_multiple_dragons_yes_95_percent
+								add = -90
+							}
+							modifier = {
+								has_variable = dragon_embryo
+								OR = {
+									has_game_rule = agot_canon_dragons_enabled_traits
+									has_game_rule = agot_canon_dragons_enabled
+								}
+								factor = 0
+							}
+							save_scope_as = this_egg
+							hidden_effect = {
+								root = { destroy_owned_artifact = scope:this_egg }
+							}
+						}
+					}
+				}
+			}
+			set_variable = {
+				name = additional_prestige
+				value = 9000
 			}
 			every_courtier = {
 				limit = { has_trait = dragon }
 				add_to_list = hatched_dragons
+				root = {
+					change_variable = {
+						name = additional_prestige
+						add = 1000
+					}
+				}
 			}
 			every_courtier = {
 				limit = { 
@@ -4433,7 +4600,49 @@ agot_dragon_hatching.0401 = { # Host
 			save_scope_as = dragon
 			custom_tooltip = dragon_has_hatched_tt
 		}
-		add_prestige = 10000
+		add_prestige = var:additional_prestige
+		dynasty = { add_dynasty_prestige = 1000 }
+		add_legitimacy = 1000
+		gain_legitimizing_legend_seed_tooltip_effect = yes
+		stress_impact = {
+			base = major_stress_impact_loss
+		}
+		hidden_effect = {
+			legend_seed_great_deed_dynasty_effect = yes
+			agot_inform_dragon_egg_hatched_effect = yes
+			scope:activity = { skip_activity_phase = yes }
+		}
+	}
+	option = {
+		name = agot_dragon_hatching.0401.opt.b
+		custom_tooltip = agot_dragon_hatching.0401.opt.a_tt
+		if = {
+			limit = {
+				has_activity_intent = hatch_dragon_intent
+			}
+			complete_activity_intent = yes
+		}
+		if = {
+			limit = {
+				root = {
+					is_female = no
+				}
+			}
+			give_nickname = nick_the_father_of_dragons
+		}
+		else = {
+			give_nickname = nick_the_mother_of_dragons
+		}
+		every_in_list = {
+			list = hatched_dragons
+			save_scope_as = dragon
+			custom_tooltip = dragon_has_hatched_tt
+			change_variable = {
+				name = additional_prestige
+				add = 1000
+			}
+		}
+		add_prestige = var:additional_prestige
 		dynasty = { add_dynasty_prestige = 1000 }
 		add_legitimacy = 1000
 		gain_legitimizing_legend_seed_tooltip_effect = yes
@@ -4511,6 +4720,20 @@ agot_dragon_hatching.9999 = { # Kill host via sacrifice if they should be dead
 			}
 			# Destroy the egg if failed
 			destroy_artifact = scope:activity.var:selected_egg
+			if = {
+			limit = {
+				NOT = {
+					has_game_rule = can_hatch_multiple_dragons_no
+				}
+			}
+			every_character_artifact = {
+				limit = {
+					has_variable = dragon_egg
+					has_variable = extra_egg_to_hatch
+				}
+				destroy_artifact = this
+			}
+		}
 		}
 		if = {
 			limit = {

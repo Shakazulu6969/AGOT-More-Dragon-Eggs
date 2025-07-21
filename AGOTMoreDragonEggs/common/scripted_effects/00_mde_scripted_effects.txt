@@ -1,0 +1,31 @@
+﻿selected_set_error_fixer = {
+	character:Unknown_Empress = {
+		save_scope_as = selected_dragon
+	}
+    set_variable = {
+		name = selected_dragon
+		value = character:Unknown_Empress
+	}
+	title:c_unknown = {
+		save_scope_as = selected_dragonpit
+	}
+	set_variable = {
+		name = selected_dragonpit
+		value = title:c_unknown
+	}
+}
+
+mde_egg_hatching_list_builder = {
+	every_artifact = {
+		limit = { has_variable = dragon_egg }
+		add_to_list = mde_egg_hatching_list
+	}
+}
+
+mde_get_dragon_parents_for_gui = {
+    $EGG$ = {
+        var:dragon_parent = {
+            save_scope_as = tempdragonparent
+        }
+    }
+}

@@ -2292,7 +2292,10 @@ story_agot_canon_children_rhaegar_targaryen = {
 												BIRTH_YEAR = agot_canon_children_birth_year_rhaenys_r_targaryen
 											}
 											game_start_date = 8277.1.1
-											scope:canon_father = { is_married = yes }
+											OR = {
+												number_of_concubines >= 1
+												scope:canon_father = { is_married = yes }
+											}
 										}
 									}
  								}
@@ -2323,7 +2326,10 @@ story_agot_canon_children_rhaegar_targaryen = {
 												BIRTH_YEAR = agot_canon_children_birth_year_aegon_r_targaryen
 											}
 											game_start_date = 8277.1.1
-											scope:canon_father = { is_married = yes }
+											OR = {
+												number_of_concubines >= 1
+												scope:canon_father = { is_married = yes }
+											}
 										}
 									}
  								}

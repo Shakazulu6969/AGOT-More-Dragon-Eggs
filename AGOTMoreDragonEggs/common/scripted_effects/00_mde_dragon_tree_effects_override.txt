@@ -31,4 +31,12 @@
 		}
 		agot_add_to_dragon_tree = { PARENT = character:dragon_sheepstealer CHILD = scope:dragon }
 	}
+	else_if = {
+		limit = {
+			exists = character:dragon_vassarion
+			exists = scope:dragon.father
+			scope:dragon.father = character:dragon_vassarion
+		}
+		agot_add_to_dragon_tree = { PARENT = character:dragon_vassarion CHILD = scope:dragon }
+	}
 }

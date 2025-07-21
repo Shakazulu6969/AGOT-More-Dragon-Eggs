@@ -82,7 +82,7 @@
  agot_dragon_maintenance.0807.b:0 "Dismiss"
 
  mde_dragon_eggs_events.0001.t:0 "Dragonlore: The Cannibals Of Skagos"
- mde_dragon_eggs_events.0001.desc:0 "The fearsome and violent dragon, [cannibal.GetName], was notorious for the abominable acts that earned him his name. Neither the Targaryens or the Order of the Dragonkeepers were able to contain the monstrous beast, much less stop him from feasting on his kin.\n\nIn recorded history, [cannibal.GetName]'s appearance is as mysterious as his disappearance , as very little is known about either. Many say that his birth predated the birth of the Conquerors' dragons.\n\nIt is known, however, that [cannibal.GetName] disappeared some time after The Dance of Dragons. Though some have speculated that he might have flown off into the heart of Skagos, drawn by those of similar nature. You think that this may have been more than speculation, evidenced by the dragonglass scarring the forest floor around you."
+ mde_dragon_eggs_events.0001.desc:0 "The fearsome and violent dragon, [cannibal.GetName], was notorious for the abominable acts that earned him his name. Neither the Targaryens or the Order of the Dragonkeepers were able to contain the monstrous beast, much less stop him from feasting on his kin.\n\nIn recorded history, [cannibal.GetNamePossessive] appearance is as mysterious as his disappearance , as very little is known about either. Many say that his birth predated the birth of the Conquerors' dragons.\n\nIt is known, however, that [cannibal.GetName] disappeared some time after The Dance of Dragons. Though some have speculated that he might have flown off into the heart of Skagos, drawn by those of similar nature. You think that this may have been more than speculation, evidenced by the dragonglass scarring the forest floor around you."
  mde_dragon_eggs_events.0001.a:0 "Unnerving."
 
  mde_dragon_eggs_events.0002.t:0 "Dragonlore: The Fire Witch Of The Vale"
@@ -106,6 +106,49 @@
  mde_dragon_eggs_events.0007.desc:0 "I walk high up on the cliffs of Dragonstone, the sound of waves crashing against the rocks below mixing with the slow rumble of the volcano in my ears. As I walk, I find a small opening — the perfect place for my cave exploration to begin.\n\nI climb over a crest of rock, guided by the light cascading over the rocks. Several passages lead off from the main chamber, but the light streaks through a single vein of obsidian, as though guiding me. I follow it, and where it leads me, I cannot believe.\n\nAn egg rests in the center of the room, the light ending just above it! As soon as I touch it however, the passage of time makes itself known, and the light begins to fade. I barely have enough time to grab the egg and rush out of the cave before the light would fade completely, locking me in darkness.\n\nWith heavy breaths of exertion, I make it out of the cave, the egg in my hands!"
  mde_dragon_eggs_events.0007.a:0 "That was close, but well worth it!"
  mde_dragon_eggs_events.0007.tt:0 "You gained a Dragon Egg!"
+
+ mde_dragon_eggs_events.0008.t:0 "Dragonlore: The Ruins of Spicetown"
+ mde_dragon_eggs_events.0008.desc:0 "The Battle of the Gullet was one of the many infamous battles that took place during the Dance of the Dragons, the Targaryen civil war that greatly weakened their power. An alliance had been brokered between the Greens and the Triarchy, culminating in a massive armada slamming into the Velaryon blockade of the Gullet, a strategic chokepoint that denied supply access to King’s Landing\n\nThe battle ended in a pyrrhic victory for the Blacks, who managed to hold their blockade and defeat the Triarchy’s armada, at great cost. The crown prince [jaecaerys.GetName] and his dragon, [vermax.GetName], were both slain, and Spicetown was burned to ashes. Legend tells that [jaecaerys.GetNamePossessive] promised, [baela.GetName], and her dragon, [moondancer.GetName], grieved alike in the ruins."
+ mde_dragon_eggs_events.0008.a:0 "A haunting tragedy."
+
+ mde_dragon_eggs_events.0009.t:0 "Dragonlore: Deep in The Ruins of Spicetown"
+ mde_dragon_eggs_events.0009.desc:0 "The sombering nature of the ruins of Spicetown have weighed heavy on my mind, and as such I’ve chosen to pause among the ruins and explore them.\n\nWandering inside the various dilapidated structures, you find a large, burned out area of a large building that has been hitherto untouched since it was first destroyed. While kicking around the scattered stones on the floor, a glitter of color flashes in the corner of my eye, jarring in its contrast to the black and grays of the destruction around me.\n\nI pry the colorful stones away from the ground and stare in shock at what I have in my hands. A dragon egg! The rumors of a grieving [moondancer.GetName] were true, I’ve found her egg!"
+ mde_dragon_eggs_events.0009.a:0 "A silver lining to the tragedy!"
+
+ mde_dragon_eggs_events.0010.t:0 "Dragonlore: Nagga's Bones"
+ mde_dragon_eggs_events.0010.desc:0 "Thousands of years ago, in the Age of Heroes, many legends were formed from the many fantastical events that took place in this antiquitous age. The most historically reverberative of these legends is the legend of [nagga.GetName], whose great bones serve as a place of great cultural significance to the Ironborn. It was the seat of [grey_king.GetName] and served as the location of the Kingsmoot for many centuries.\n\nIronborn tales say that [nagga.GetName] was the first sea dragon, who fed on leviathans and krakens, and whose ferocity was so great that she could drown entire islands. Tales of such feats only serve to mythologize the prowess of [grey_king.GetName], who slew the mighty beast, and raised his hall with her bones, warmed it with her living fire, made his throne from her jaw, and his crown from her teeth.\n\nNow the sight is eerily quiet, but the titanic bones haunt me with a megalophobic sense of dread."
+ mde_dragon_eggs_events.0010.a:0 "A beast of unprecedented scale..."
+
+ mde_dragon_eggs_events.0011.t:0 "Dragonlore: The Ancient Kingsmoot"
+ mde_dragon_eggs_events.0011.desc:0 "It seems almost destined that I visited the harrowing remains of the great beast [nagga.GetName] on a day with exceedingly rare sea levels brought on by a once in a lifetime low tide.\n\nWhile the Ironborn warn of such low tides as an omen of danger, something calls out from deep within me, dark and compelling. I will heed the call of destiny if it commands me, and I almost intuitively walk to the exposed shoreline, following in the steps of the ancient Kingsmoot. As I approach the water, there are a number of ancient weapons, rusted and covered in corals and barnacles. I delve into the deep, baptizing myself in salt, letting the sea fill my lungs.\n\nI black out, with my last memory being of something powerful, mayhaps a being of some kind, and something in my hands. When I awake, I find myself on the sandy shores, with a gleaming, cobalt blue dragon egg next to me!"
+ mde_dragon_eggs_events.0011.a:0 "A faustian gift from a servant of The Great Other..."
+ mde_dragon_eggs_events.0011.b:0 "The Drowned God provides!  @drownedgod_icon!"
+
+ mde_dragon_eggs_events.0012.t:0 "Dragonlore: The Bolt at The Hellholt"
+ mde_dragon_eggs_events.0012.desc:0 "Long have I traveled in the grueling deserts of Dorne, and traveling this far away from The Dune Roads has made the journey agonizing and exhausting.The nearest castle, the Hellholt offers but a fool’s reprieve, and yet there is no other option. As the castle draws nearer, plumes of sulfurous smog rise off the nearby Brimstone and geysers, obscuring the sun. But it offers no relief, only making the air hotter. When I approach the castle, I notice the main tower has yet to be repaired since the Conquest.\n\nThe destruction was the result of the infamous death of the dragonrider [rhaenys.GetName], and her she-dragon, [meraxes.GetName]. At the time of her death, [rhaenys.GetName] had been on a campaign to suppress the resistant Dornish using dragonfire to burn their castles. The Ullers of the Hellholt did what no one else had managed, and fire a scorpion bolt directly through the eye of [meraxes.GetName] sending both rider and dragon plummeting to their doom. [meraxes.GetNamePossessive] bones remain, jutting out from the surrounding sand turned glass."
+ mde_dragon_eggs_events.0012.a:0 "What power!"
+
+ mde_dragon_eggs_events.0013.t:0 "Dragonlore: Through The Dragonglass"
+ mde_dragon_eggs_events.0013.desc:0 "Upon closer inspection of [meraxes.GetNamePossessive] skeleton, I am appalled at the power of a dragon’s fire. The surrounding ground is all glass melted from the sand that was once here, most of it thick, dark, and opaque.\n\nBut I find the more I uncover from the fresher layers of dirt, the clearer the glass becomes. Vexed, I work like mad to find the clearest patch of glass I can.\n\nAfter hours of inspecting, I find glass that reveals a golden and silver shimmer. I cover it back up and return under the cover of darkness, hacking away with a pickaxe until I uncover my treasure: a dragon egg!"
+ mde_dragon_eggs_events.0013.a:0 "My precious!"
+
+ mde_dragon_eggs_events.0014.t:0 "Dragonlore: The Gardener of The Glass Orb"
+ mde_dragon_eggs_events.0014.desc:0 "Few were the dragonlords following the Doom. It was only with the magical foresight of Daenys the Dreamer that the Targaryens were able to hold on to their fire made flesh. Although, in the time immediately after the Doom, there were others.\n\n[jaehaelor.GetName] was a landowner and dragonrider in the Valyrian Freehold who rode the dragon [pythax.GetName] who appeared to be a scholar with a particular aptitude in botany, as he wrote often of glass orb greenhouse in Valyria proper.\n\n When the Doom shook the heavens and earth, [jaehaelor.GetName] was visiting the Forests of Qohor to gather samples. He passed through this very location as he flew back from Qohor to Old Volantis, wherein he would spend the remainder of his life committing as much as he could remember of his gardens to memory. His dragon [pythax.GetName] perished soon after the doom after refusing to eat. [jaehaelor.GetName] died soon after, while intervening in the lashing of a slave on the Long Bridge."
+ mde_dragon_eggs_events.0014.a:0 "An ironic end."
+
+ mde_dragon_eggs_events.0015.t:0 "Dragonlore: Left In Haste"
+ mde_dragon_eggs_events.0015.desc:0 "It is known that he camped in this very spot, but no evidence of the fact remains. As I search for my own spot to set up camp, I push through thick shrubbery and discover some items that clearly belonged to an upper class member of the Freehold.\n\nI follow a haphazard trail of strewn about Valyrian artifacts, certainly all of immense value. However, almost fully buried in mud, and camouflaged with dirt, I find a hitherto untouched trunk that must have been left behind in a hurry.\n\nWith great effort, I unearth the trunk and rip it open from its petrified hinges, revealing a treasure far greater than the surrounding loot. A dragon egg!"
+ mde_dragon_eggs_events.0015.a:0 "[jaehaelor.GetNamePossessiveNoTooltip] last gift!"
+
+ mde_dragon_eggs_events.0016.t:0 "Dragonlore: The Emperor Who Never Was"
+ mde_dragon_eggs_events.0016.desc:0 "Few were the dragonlords following the Doom. It was only with the magical foresight of Daenys the Dreamer that the Targaryens were able to hold on to their fire made flesh. Although, in the time immediately after the Doom, there were others.\n\n[oreo.GetName] was perhaps the most well known of them. Aurion Varezys was a powerful dragonlord in the Valyrian Freehold. When the Doom shook the heavens and earth, Aurion Varezys was visiting Qohor. Upon his realization that there was no other who could his power, Aurion Varezys raised a host 30,000 strong and proclaimed himself the first Emperor of Valyria. Aurion Varezys, his fearsome dragon [vassarion.GetName], and his great host all marched south from Qohor with the goal of retaking Valyria, unopposed. However, the moment they crossed into the doom was the last that any had ever seen of them."
+ mde_dragon_eggs_events.0016.a:0 "Bold, but foolish."
+
+ mde_dragon_eggs_events.0017.t:0 "Dragonlore: The Golden Egg"
+ mde_dragon_eggs_events.0017.desc:0 "It is known that his host camped in this very spot on their way from Qohor to Valyria. But after so long a time, little evidence of the fact remains. What does remain however, is a traditional Valyrian effigy, crafted by the members of the Imperial Valyrian Host, commemorating those lost in the disaster, presumably the soldiers’ distant, and now lost, families.\n\nThe Valyrian writing carved into stone here was not carved by fire, but raggedly, with metal, and I can just make out a phrase about something below. I trust my instincts and dig under the effigy, revealing a cache of weapons and something even greater, a golden dragon egg!"
+ mde_dragon_eggs_events.0017.a:0 "Free of the dead's hold!"
+
+
 
  agot_dragon_maintenance.0802.desc:0 ""
  agot_dragon_maintenance.0807.desc:0 ""
@@ -157,5 +200,15 @@
  agot_targaryen_exile_invasion.9999.desc:0 "Now that I lead the Exiles and hold the entire Targaryen Dynasty on my shoulders, I must decide what to do with my arrogant and callous brother."
  agot_targaryen_exile_invasion.9999.b:0 "Show him mercy!"
  agot_targaryen_exile_invasion.9999.a:0 "Give him the crown he has earned!"
+
+ agot_ruins.2001.t:0 "Treasures from Tragedy"
+ agot_ruins.2001.d:0 "The ruins of Spicetown have long since been overcast with a sense of eerie gloom. The small folk often spread tale that it had been abandoned so long it was claimed as the home of cursed spirits. In face of such superstition, moving its restoration along has proven an enormous effort. But the idea of returning the city to its former glory, a center of trade and gold, has shown to be motivational\n\nToday the effort has proven worthwhile! The last remnants of the ruins were excavated, a supposedly haunted area that hadn’t seen activity from man since The Battle of The Gullet. In a large, burnt-out building, a dragon egg was found!"
+ agot_ruins.2001.a:0 "A fortuitous omen!"
+ agot_ruins.2001.b:0 "Better it be given to our liege lord."
+
+ agot_ruins.2002.t:0 "A Dragon Egg Is Offered"
+ agot_ruins.2002.d:0 "My vassal [egg_giver.GetName] has found an egg in the process of restoring the ruins of Spicetown! Even better news, they have offered it to us as its rightful stewards!"
+ agot_ruins.2002.a:0 "We accept!"
+ agot_ruins.2002.b:0 "Better they keep it."
 
  

@@ -6,7 +6,11 @@ agot_canon_children_force_pregnancy_spouse_trigger = {
 	OR = {
 		is_spouse_of = $SPOUSE$
 		betrothed = $SPOUSE$
+		$SPOUSE$ = {
+			is_concubine_of = prev
+		}
 	}
+	
 }
 
 agot_canon_children_force_pregnancy_real_father_trigger = {

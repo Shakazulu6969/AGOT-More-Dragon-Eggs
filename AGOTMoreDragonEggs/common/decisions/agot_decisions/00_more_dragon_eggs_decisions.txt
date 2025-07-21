@@ -229,6 +229,7 @@ move_dragon_dragonpit = {
     decision_group_type = dragon_group
 
     effect = {
+        selected_set_error_fixer = yes
         trigger_event = more_dragon_eggs_events.0003
     }
 }
@@ -254,6 +255,7 @@ show_dragonpits_decision = {
     decision_group_type = more_eggs
 
     effect = {
+        selected_set_error_fixer = yes
         trigger_event = more_dragon_eggs_events.0015
     }
 }
@@ -276,6 +278,7 @@ show_dragons_decision = {
     decision_group_type = more_eggs
 
     effect = {
+        selected_set_error_fixer = yes
         trigger_event = more_dragon_eggs_events.0014
     }
 }

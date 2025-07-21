@@ -20,10 +20,20 @@
  #Hatching
  rule_can_hatch_multiple_dragons:0 "@mde_icon!@hatching_icon!Hatch Multiple Eggs In A Ceremony"
  setting_can_hatch_multiple_dragons_no:0 "It Will Not Be Possible"
- setting_can_hatch_multiple_dragons_yes:0 "All Eggs Will Hatch"
+ setting_can_hatch_multiple_dragons_yes_5_percent:0 "Yes - 5% Chance Each"
+ setting_can_hatch_multiple_dragons_yes_25_percent:0 "Yes - 25% Chance Each"
+ setting_can_hatch_multiple_dragons_yes_50_percent:0 "Yes - 50% Chance Each"
+ setting_can_hatch_multiple_dragons_yes_75_percent:0 "Yes - 75% Chance Each"
+ setting_can_hatch_multiple_dragons_yes_95_percent:0 "Yes - 95% Chance Each"
+ setting_can_hatch_multiple_dragons_yes_all:0 "All Eggs Will Hatch"
 
- setting_can_hatch_multiple_dragons_no_desc:0 "There will be no chance that any other egg than the selected one will hatch."
- setting_can_hatch_multiple_dragons_yes_desc:0 "Every dragon egg in the character's inventory will hatch into an owned dragon."
+ setting_can_hatch_multiple_dragons_no_desc:0 "There will be no chance that any other egg than the selected one will hatch from a successful hatching."
+ setting_can_hatch_multiple_dragons_yes_5_percent_desc:0 "There will be a 5% chance that any other egg than the selected one will hatch from a successful hatching."
+ setting_can_hatch_multiple_dragons_yes_25_percent_desc:0 "There will be a 25% chance that any other egg than the selected one will hatch from a successful hatching."
+ setting_can_hatch_multiple_dragons_yes_50_percent_desc:0 "There will be a 50% chance that any other egg than the selected one will hatch from a successful hatching."
+ setting_can_hatch_multiple_dragons_yes_75_percent_desc:0 "There will be a 75% chance that any other egg than the selected one will hatch from a successful hatching."
+ setting_can_hatch_multiple_dragons_yes_95_percent_desc:0 "There will be a 95% chance that any other egg than the selected one will hatch from a successful hatching."
+ setting_can_hatch_multiple_dragons_yes_all_desc:0 "Every dragon egg in the character's inventory will hatch into an owned dragon in a successful hatching."
 
  rule_dragon_hatching_success_chance:0 "@mde_icon!@hatching_icon!Dragon Hatching Success Chance"
  setting_dragon_hatching_guaranteed:0 "Guaranteed"
@@ -80,6 +90,41 @@
 
  setting_spawn_vhagar_egg_enabled_desc:0 "Vhagar descended dragon egg can be picked up by travelers going to Harrenhal."
  setting_spawn_vhagar_egg_disabled_desc:0 "The Dragonlore event in Harrenhal will remain but it will never spawn a dragon egg.
+
+ rule_spawn_moondancer_egg:0 "@mde_icon!@palebluepink_dragon_egg_icon!Spawn Moondancer Egg"
+ setting_spawn_moondancer_egg_enabled:0 "Enabled"
+ setting_spawn_moondancer_egg_disabled:0 "Disabled"
+
+ setting_spawn_moondancer_egg_enabled_desc:0 "Moondancer descended dragon egg can be picked up by travelers going into the Mountains of the Vale."
+ setting_spawn_moondancer_egg_disabled_desc:0 "The Dragonlore event in the Vale will remain but it will never spawn a dragon egg.
+
+ rule_spawn_nagga_egg:0 "@mde_icon!@darkblue_dragon_egg_icon!Spawn Nagga Egg"
+ setting_spawn_nagga_egg_enabled:0 "Enabled"
+ setting_spawn_nagga_egg_disabled:0 "Disabled"
+
+ setting_spawn_nagga_egg_enabled_desc:0 "Nagga descended dragon egg can be picked up by travelers going into the Mountains of the Vale."
+ setting_spawn_nagga_egg_disabled_desc:0 "The Dragonlore event in the Vale will remain but it will never spawn a dragon egg.
+
+ rule_spawn_meraxes_egg:0 "@mde_icon!@whitegold_dragon_egg_icon!Spawn Meraxes Egg"
+ setting_spawn_meraxes_egg_enabled:0 "Enabled"
+ setting_spawn_meraxes_egg_disabled:0 "Disabled"
+
+ setting_spawn_meraxes_egg_enabled_desc:0 "Meraxes descended dragon egg can be picked up by travelers going into the Mountains of the Vale."
+ setting_spawn_meraxes_egg_disabled_desc:0 "The Dragonlore event in the Vale will remain but it will never spawn a dragon egg.
+
+ rule_spawn_pythax_egg:0 "@mde_icon!@darkpurple_dragon_egg_icon!Spawn Pythax Egg"
+ setting_spawn_pythax_egg_enabled:0 "Enabled"
+ setting_spawn_pythax_egg_disabled:0 "Disabled"
+
+ setting_spawn_pythax_egg_enabled_desc:0 "Pythax descended dragon egg can be picked up by travelers going into the Mountains of the Vale."
+ setting_spawn_pythax_egg_disabled_desc:0 "The Dragonlore event in the Vale will remain but it will never spawn a dragon egg.
+
+ rule_spawn_vassarion_egg:0 "@mde_icon!@gold_dragon_egg_icon!Spawn Vassarion Egg"
+ setting_spawn_vassarion_egg_enabled:0 "Enabled"
+ setting_spawn_vassarion_egg_disabled:0 "Disabled"
+
+ setting_spawn_vassarion_egg_enabled_desc:0 "Vassarion descended dragon egg can be picked up by travelers going into the Mountains of the Vale."
+ setting_spawn_vassarion_egg_disabled_desc:0 "The Dragonlore event in the Vale will remain but it will never spawn a dragon egg.
 
  rule_spawn_hightower_egg:0 "@mde_icon!@blue_dragon_egg_icon!Spawn Hightower Egg"
  setting_spawn_hightower_egg_enabled:0 "Enabled"

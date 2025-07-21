@@ -1,0 +1,53 @@
+agot_ruins_spicetown_02 = {
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+
+	construction_time = very_slow_construction_time
+
+	asset = {
+		type = pdxmesh
+		name = "port_1_mesh"
+	}
+
+	cost_gold = 750
+
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_8
+	}
+
+	county_holder_character_modifier = {
+		embarkation_cost_mult = -0.3
+		naval_movement_speed_mult = 0.75
+		diplomatic_range_mult = 1.0
+	}
+
+	character_modifier = {
+		embarkation_cost_mult = -0.3
+		naval_movement_speed_mult = 0.75
+		diplomatic_range_mult = 1.0
+	}
+
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+	}
+
+	type = special
+
+	on_complete = {
+        if = {
+            limit = {
+                NOR = {
+                    has_global_variable = moondancer_egg_found
+                    has_game_rule = no_spawns
+                    has_game_rule = spawn_moondancer_egg_disabled
+                }
+            }
+        } 
+        county.holder = { trigger_event = agot_ruins.2001 }
+	}
+
+	flag = travel_point_of_interest_economic
+}

@@ -142,6 +142,56 @@ texticon = {
 }
 
 texticon = {
+	icon = palebluepink_dragon_egg_icon
+	iconsize = {
+		texture = "gfx/interface/icons/artifact/dragon_egg_palebluepink.dds"
+		size = { 30 30 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = darkblue_dragon_egg_icon
+	iconsize = {
+		texture = "gfx/interface/icons/artifact/dragon_egg_darkblue.dds"
+		size = { 30 30 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = darkpurple_dragon_egg_icon
+	iconsize = {
+		texture = "gfx/interface/icons/artifact/dragon_egg_darkpurple.dds"
+		size = { 30 30 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = gold_dragon_egg_icon
+	iconsize = {
+		texture = "gfx/interface/icons/artifact/dragon_egg_gold.dds"
+		size = { 30 30 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = whitegold_dragon_egg_icon
+	iconsize = {
+		texture = "gfx/interface/icons/artifact/dragon_egg_whitegold.dds"
+		size = { 30 30 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
 	icon = dragon_icon
 	iconsize = {
 		texture = "gfx/interface/icons/character_interactions/icon_scheme_dragon.dds"
@@ -155,6 +205,16 @@ texticon = {
 	icon = mde_icon
 	iconsize = {
 		texture = "gfx/interface/icons/mde_icon.dds"
+		size = { 28 28 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = drownedgod_icon
+	iconsize = {
+		texture = "gfx/interface/icons/faith/drownedgod.dds"
 		size = { 28 28 }
 		offset = { 0 6 }
 		fontsize = 16

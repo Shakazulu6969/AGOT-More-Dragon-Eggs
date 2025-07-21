@@ -210,10 +210,10 @@
   
  rule_can_hatch_multiple_dragons: "@dragon_destined_icon! More Dragon Eggs — Вылупление нескольких яиц в церемонии"
  setting_can_hatch_multiple_dragons_no: "Будет невозможно"
- setting_can_hatch_multiple_dragons_yes: "Все яйца вылупятся"
+ setting_can_hatch_multiple_dragons_yes_all: "Все яйца вылупятся"
   
  setting_can_hatch_multiple_dragons_no_desc: "Только выбранное яйцо может вылупиться. Остальные яйца не получат шанса."
- setting_can_hatch_multiple_dragons_yes_desc: "Все драконьи яйца в инвентаре персонажа вылупятся в принадлежащих драконов."
+ setting_can_hatch_multiple_dragons_yes_all_desc: "Все драконьи яйца в инвентаре персонажа вылупятся в принадлежащих драконов."
   
  rule_use_dragon_pit_mover: "@dragon_destined_icon! More Dragon Eggs — Использовать MDE Dragonpit Mover"
  setting_use_dragon_pit_mover_no: "Настройки базовой игры AGOT"

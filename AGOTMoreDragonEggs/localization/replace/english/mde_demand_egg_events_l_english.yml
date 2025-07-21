@@ -80,3 +80,7 @@
 
  demanded_egg_interaction:0 "[actor.GetTitledFirstNameNoTooltip] demanded your [artifact|E] [target.GetName]"
  demanded_egg_interaction.t:0 "Demanded A Dragon Egg!"
+
+ agot_dragon_hatching.0401.opt.b:0 "My children!"
+ mde_include_egg:0 "Include"
+ mde_this_dragon_will_hatch_this:0 "#color_dark_gray [Artifact.Custom('mde_this_dragon_will_hatch')] #"
